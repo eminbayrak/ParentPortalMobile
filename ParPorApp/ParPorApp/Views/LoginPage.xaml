@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             x:Class="ParPorApp.Views.LoginPage"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Image x:Name="LogoIcon" Source="logo.png" HeightRequest="125" WidthRequest="125" Margin="20,60,20,40" />
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>
+                            40,0,40,140
+                        </OnIdiom.Phone>
+                        <OnIdiom.Tablet>
+                            140,150,140,0
+                        </OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="ic_account.png" Grid.Row="0" Grid.Column="0" />
+                    <Entry Grid.Row="0" Grid.Column="1" x:Name="EmailEntry" 
+                           HorizontalOptions="FillAndExpand" Text="{Binding Username}"
+                           Placeholder="Email" Keyboard="Email" />
+                    <Image Source="ic_password.png" Grid.Row="1" Grid.Column="0" />
+                    <Entry Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" x:Name="PasswordEntry" Text="{Binding Password}"
+                           Placeholder="Password" IsPassword="True" />
+                </Grid>
+                <Button x:Name="LoginButton" Command="{Binding LoginCommand}" Style="{StaticResource FollowButton}"
+                        Text="Login" />
+                <Label x:Name="messageLabel" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

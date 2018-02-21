@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParPorApp.Views.MainPageDetail"
+             Title="Newsfeed">
+    <StackLayout Orientation="Vertical" BackgroundColor="#F2F2F2">
+
+
+        <Frame Margin="10" BackgroundColor="White" HasShadow="True" Padding="7">
+            <Label Margin="10" TextColor="Black"
+                   Text="Yes I am already doing that. But there doesn't seem to be a way to change the height or width of the frame. when I adjust the height of a frame it causes my DatePicker to disappear from the frame." />
+        </Frame>
+        <Frame Margin="10" BackgroundColor="White" HasShadow="True" Padding="7">
+
+            <Label Margin="10" TextColor="Black"
+                   Text="Yes I am already doing that. But there doesn't seem to be a way to change the height or width of the frame. when I adjust the height of a frame it causes my DatePicker to disappear from the frame." />
+        </Frame>
+        <Frame Margin="10" BackgroundColor="White" HasShadow="True" Padding="7">
+
+            <Label Margin="10" TextColor="Black"
+                   Text="Yes I am already doing that. But there doesn't seem to be a way to change the height or width of the frame. when I adjust the height of a frame it causes my DatePicker to disappear from the frame." />
+        </Frame>
+        <Frame Margin="10" BackgroundColor="White" HasShadow="True" Padding="7">
+
+            <Label Margin="10" TextColor="Black"
+                   Text="Yes I am already doing that. But there doesn't seem to be a way to change the height or width of the frame. when I adjust the height of a frame it causes my DatePicker to disappear from the frame." />
+        </Frame>
+
+
+    </StackLayout>
+</ContentPage>

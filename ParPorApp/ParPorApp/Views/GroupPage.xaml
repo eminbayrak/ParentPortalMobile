@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             x:Class="ParPorApp.Views.GroupPage"
+             Title="Group">
+
+    <ContentPage.BindingContext>
+        <viewModels:GroupsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        
+    </ContentPage.ToolbarItems>
+    <StackLayout Padding="20">
+        
+        <!--<Button Command="{Binding GetGroupsCommand}" Text="Group List"/>-->
+        <ListView ItemsSource="{Binding Groups}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0,10">
+                            <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}"/>
+                            <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

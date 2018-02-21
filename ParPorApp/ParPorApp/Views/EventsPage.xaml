@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             x:Class="ParPorApp.Views.EventsPage"
+             Title="Events">
+
+    <ContentPage.BindingContext>
+        <viewModels:EventsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout"
+                     Command="{Binding LogoutCommand}"
+                     Clicked="LogoutMenuItem_Clicked"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout Padding="20">
+        <Entry Text="{Binding AccessToken}"/>
+        <Button Command="{Binding GetEventsCommand}" Text="All Events"/>
+        <ListView ItemsSource="{Binding Events}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0,10">
+                            <Label Text="{Binding Description}"
+                                   FontSize="24"
+                                   TextColor="RoyalBlue" />
+                            <Label Text="{Binding StartDateTime}" />
+                            <Label Text="{Binding GroupId}" />
+                            <Label Text="{Binding LocationId}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
