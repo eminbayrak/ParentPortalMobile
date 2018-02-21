@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 using Newtonsoft.Json;
 using ParPorApp.Helpers;
+using ParPorApp.Models;
 using ParPorApp.Services;
 using Xamarin.Forms;
 

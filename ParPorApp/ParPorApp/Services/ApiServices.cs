@@ -1,22 +1,27 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text.RegularExpressions;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
+using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+using Microsoft.WindowsAzure.MobileServices.Sync;
 using ParPorApp.ViewModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ParPorApp.Helpers;
 using ParPorApp.Models;
+using ParPorApp.Views;
 using Xamarin.Forms;
 
 
 namespace ParPorApp.Services
 
 {
-    internal class ApiServices : Page
+    internal class ApiServices
     {
         public async Task<bool> RegisterUserAsync(
             string email, string password, string confirmPassword)
@@ -138,4 +143,3 @@ namespace ParPorApp.Services
         //}
     }
 }
-
