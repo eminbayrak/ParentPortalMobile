@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using ParPorApp.Helpers;
 using ParPorApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,14 +22,11 @@ namespace ParPorApp.Views
             PasswordEntry.Completed += (sender, args) => { LoginButton.Focus(); };
             
         }
-        
 
-        //private async void NavigateToMainPage(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new MainPage());
-        //}
 
         
+
+
     }
 
 }

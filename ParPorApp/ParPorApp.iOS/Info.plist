@@ -50,5 +50,9 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>ParPorApp</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/FontAwesome.otf</string>
+	</array>
 </dict>
 </plist>

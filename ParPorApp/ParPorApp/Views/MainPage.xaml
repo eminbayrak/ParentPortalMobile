@@ -11,7 +11,7 @@
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:MainPageDetail />
+        <pages:SocialPage />
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

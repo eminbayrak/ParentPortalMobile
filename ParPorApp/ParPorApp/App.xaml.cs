@@ -14,6 +14,7 @@ namespace ParPorApp
 
             SetMainPage();
             
+
         }
 
         private void SetMainPage()
