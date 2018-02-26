@@ -169,8 +169,14 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens">
       <Version>5.2.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.1</Version>
+    </PackageReference>
     <PackageReference Include="PCLCrypto">
       <Version>2.0.147</Version>
+    </PackageReference>
+    <PackageReference Include="RestSharp">
+      <Version>106.2.1</Version>
     </PackageReference>
     <PackageReference Include="System.AppContext">
       <Version>4.3.0</Version>

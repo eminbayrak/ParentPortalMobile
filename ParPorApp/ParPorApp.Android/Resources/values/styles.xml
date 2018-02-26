@@ -25,17 +25,17 @@
 
     <!-- colorPrimary is used for the default action bar background -->
 
-    <item name="colorPrimary">#000</item>
+    <item name="colorPrimary">#bc4b4b</item>
 
     <!-- colorPrimaryDark is used for the status bar -->
 
-    <item name="colorPrimaryDark">#B24548</item>
+    <item name="colorPrimaryDark">#963c3c</item>
 
     <!-- colorAccent is used as the default value for colorControlActivated
 
          which is used to tint widgets -->
 
-    <item name="colorAccent">#D96771</item>
+    <item name="colorAccent">#bc4b4b</item>
    
 
     <!-- You can also set colorControlNormal, colorControlActivated
@@ -55,7 +55,7 @@
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
 
-    <item name="colorAccent">#FF4081</item>
+    <item name="colorAccent">#bc4b4b</item>
 
   </style>
   <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">

@@ -5,6 +5,7 @@
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              x:Class="ParPorApp.Views.MainPageMaster"
+             BackgroundColor="#2c2d37"
              Title="Profile">
     <ContentPage.BindingContext>
         <viewModels:LoginViewModel />
@@ -12,6 +13,7 @@
     <StackLayout>
         <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="Default"
+                  SeparatorColor="DarkSlateGray"
                   HasUnevenRows="true"
                   ItemsSource="{Binding MenuItems}">
             <ListView.Header>
@@ -25,38 +27,52 @@
                     </Grid.RowDefinitions>
 
                     <!--  header background  -->
-                    <Image Aspect="AspectFill" Source="HeaderCurved.png" />
+                    <!--<Image Aspect="AspectFill" Source="HeaderCurved.png" />-->
                     
                     <!--  profile image  -->
                     <abstractions:CircleImage Grid.Row="0" 
                                               BorderColor="#ffffff"
-                                              BorderThickness="2"
-                                              HeightRequest="100" 
+                                              BorderThickness="1"
+                                              HeightRequest="80" 
                                               HorizontalOptions="Center" 
                                               Source="{Binding ImageUrl}" 
-                                              TranslationY="50" 
+                                              TranslationY="18" 
                                               VerticalOptions="End" 
-                                              WidthRequest="100" />
+                                              WidthRequest="80" />
 
                     <!--  Profile Name  -->
-                    <StackLayout Grid.Row="1" Padding="0,40,0,00" HorizontalOptions="Center">
+                    <StackLayout Grid.Row="1" Padding="0,40,0,0" HorizontalOptions="Center">
                         <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}" />
                         <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
                     </StackLayout>
                     </Grid>
             </ListView.Header>
+            
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ImageCell ImageSource="{Binding IconSource}" 
+                <!--<DataTemplate>
+                    <ImageCell ImageSource="{Binding IconSource}"
                                Text="{Binding Title}"/>
+                </DataTemplate>-->
+                
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <StackLayout Orientation="Horizontal" Padding="10,0,0,0">
+                                <Image Source="{Binding IconSource}" />
+                                <Label Text="{Binding Title}" TextColor="White" FontSize="Medium"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
+
             </ListView.ItemTemplate>
         </ListView>
+        
 
         <Button Image="ic_exit.png" 
                 Text="Signout" 
-                TextColor="Black" 
-                BackgroundColor="White"
+                TextColor="White" 
+                BackgroundColor="#B24548"
                 Command="{Binding LogoutCommand}" 
                 Clicked="LogoutMenuItem_Clicked"
                 VerticalOptions="End"/>

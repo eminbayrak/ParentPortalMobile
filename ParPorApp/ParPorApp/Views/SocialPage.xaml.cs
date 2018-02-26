@@ -16,9 +16,9 @@ namespace ParPorApp.Views
         {
             InitializeComponent();
             
-            Children.Add(new LatestPage() { Title="Newsfeed", Icon = "ic_grade_18.png"});
-            Children.Add(new TablePage() { Title = "Places", Icon="fa-archive"});
-            Children.Add(new GamesPage() { Title = "Games", Icon = "ic_trophy.png"});
+            Children.Add(new LatestPage() { Title="Newsfeed", Icon = "ic_grade_18.png" });
+            Children.Add(new GamesPage() { Title = "Games", Icon="ic_games.png"});
+            Children.Add(new PlacesPage() { Title = "Places", Icon = "ic_place.png"});
             
         }
     }

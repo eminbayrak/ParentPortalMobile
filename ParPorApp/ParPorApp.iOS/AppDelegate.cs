@@ -23,6 +23,10 @@ namespace ParPorApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            // Set app theme
+            UITabBar.Appearance.BarTintColor = UIColor.FromRGB(188, 75, 75);
+            UITabBar.Appearance.TintColor = UIColor.White;
+            UIProgressView.Appearance.TintColor = UIColor.FromRGB(188, 75, 75);
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

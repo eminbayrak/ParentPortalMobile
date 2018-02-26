@@ -218,7 +218,52 @@
           "idiom" : "ios-marketing",
           "filename" : "ItunesArtwork@2x.png",
           "scale" : "1x"
-        }
+        },
+        {
+            "filename": "ic_event.png",
+            "idiom": "universal",
+            "scale": "1x"
+        },
+        {
+            "filename": "ic_event@2x.png",
+            "idiom": "universal",
+            "scale": "2x"
+        },
+        {
+            "filename": "ic_event@3x.png",
+            "idiom": "universal",
+            "scale": "3x"
+        },
+        {
+            "filename": "ic_message.png",
+            "idiom": "universal",
+            "scale": "1x"
+        },
+        {
+            "filename": "ic_message@2x.png",
+            "idiom": "universal",
+            "scale": "2x"
+        },
+        {
+            "filename": "ic_message@3x.png",
+            "idiom": "universal",
+            "scale": "3x"
+        },
+        {
+            "filename": "ic_contact.png",
+            "idiom": "universal",
+            "scale": "1x"
+        },
+        {
+            "filename": "ic_contact@2x.png",
+            "idiom": "universal",
+            "scale": "2x"
+        },
+        {
+            "filename": "ic_contact@3x.png",
+            "idiom": "universal",
+            "scale": "3x"
+        },
     ],
     "info": {
         "author": "xcode",
