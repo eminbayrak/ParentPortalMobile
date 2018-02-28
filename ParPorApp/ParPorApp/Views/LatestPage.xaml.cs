@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ParPorApp.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LatestPage : ContentPage
-	{
-		public LatestPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LatestPage : ContentPage
+    {
+        public ObservableCollection<string> Items { get; set; }
+        public LatestPage()
+        {
+            InitializeComponent();
+            
+        }
+    }
 }

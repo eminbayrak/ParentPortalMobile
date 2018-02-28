@@ -104,6 +104,10 @@
     <None Include="ParPorApp.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\basketball.jpg" />
+    <Content Include="Assets\football.png" />
+    <Content Include="Assets\soccer.png" />
+    <Content Include="Assets\volleyball.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -158,7 +162,7 @@
       <Version>1.0.168</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Build.Framework">
-      <Version>15.5.180</Version>
+      <Version>15.6.82</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp">
       <Version>4.4.1</Version>

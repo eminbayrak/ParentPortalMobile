@@ -5,18 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\GroupsPage.xaml.cs" />
+    <Compile Remove="Views\NewsfeedViewTemplate.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Views\GroupsPage.xaml" />
+    <EmbeddedResource Remove="Views\NewsfeedViewTemplate.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
     <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.2" />
     <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="15.5.180" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="15.6.82" />
     <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="5.2.1" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.2.1" />

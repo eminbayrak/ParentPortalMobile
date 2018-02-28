@@ -120,7 +120,7 @@
       <Version>1.0.168</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Build.Framework">
-      <Version>15.5.180</Version>
+      <Version>15.6.82</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp">
       <Version>4.4.1</Version>
@@ -349,5 +349,17 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_place%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\volleyball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\basketball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\soccer.png" />
   </ItemGroup>
 </Project>

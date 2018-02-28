@@ -1,49 +1,147 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:models="clr-namespace:ParPorApp.Models;assembly=ParPorApp"
+             xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:views="clr-namespace:ParPorApp.Views;assembly=ParPorApp"
              x:Class="ParPorApp.Views.GroupsPage">
-  <ListView x:Name="groupView" 
-            HasUnevenRows="True"
-            ItemSelected="GroupView_OnItemSelected"
-            ItemsSource="{Binding Items}"
-            CachingStrategy="RecycleElement">
-            
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
+
+    <ListView x:Name="groupView"
+              HasUnevenRows="True"
+
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
+
+
+        <ListView.ItemTemplate>
+
+            <DataTemplate>
+
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal" Padding="20">
+                    <!--<Frame HasShadow="True">
+                    <StackLayout Orientation="Horizontal">
                         <abstractions:CircleImage
+                            
                             Source="{Binding ImageUrl}"
-                            WidthRequest="55"
-                            HeightRequest="55"
+                            WidthRequest="30"
+                            HeightRequest="30"
                             BorderColor="#C0C0C0"
-                            BorderThickness="2"
-                            Aspect="AspectFill"/>
-                        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center">
-                            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
+                            BorderThickness="1"
+                            />
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding Name}" FontAttributes="Bold"/>
                             <Label Text="{Binding Description}"/>
                         </StackLayout>
                     </StackLayout>
+                    </Frame>-->
+
+                    <!--<Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <abstractions:CircleImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BorderColor="Black" BorderThickness="1" Source="{Binding ImageUrl}" Aspect="AspectFill"/>
+
+                        <Label Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
+                        <Label Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Start" Text="{Binding Description}" Font="Small"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                        
+                        <Label Grid.Row="0" Grid.Column="3" Text="02/27/2018 - 9:45PM" HorizontalOptions="End" Font="Small"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                    </Grid>-->
+
+                    <Frame IsClippedToBounds="True"
+                           HasShadow="True"
+                           BackgroundColor="White">
+                        <Frame.OutlineColor>
+                            <OnPlatform x:TypeArguments="Color"
+                                        Android="Gray"
+                                        iOS="Gray" />
+                        </Frame.OutlineColor>
+                        <Frame.Margin>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        Android="7" iOS="7" />
+                        </Frame.Margin>
+                        <Frame.Padding>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        Android="5" iOS="5" />
+                        </Frame.Padding>
+                        <StackLayout Orientation="Horizontal">
+
+                            <Grid VerticalOptions="CenterAndExpand"
+                                  Padding="0"
+                                  HorizontalOptions="FillAndExpand"
+                                  BackgroundColor="Transparent">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                                    <abstractions:CircleImage Source="{Binding ImageUrl}"
+                                                              VerticalOptions="Start" HeightRequest="30"
+                                                              WidthRequest="30" />
+                                    <Label FontAttributes="None" Grid.Row="0"
+                                           HorizontalTextAlignment="Start"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="12"
+                                           Text="{Binding Name , Mode = TwoWay}" TextColor="Gray" />
+                                    <Label FontAttributes="None" Grid.Row="0"
+                                           HorizontalTextAlignment="End"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="12"
+                                           Text="{Binding date , Mode = TwoWay}" TextColor="Gray" />
+                                </StackLayout>
+
+                                <Grid Grid.Row="1" Padding="10">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        
+                                        <Label Text="{Binding  Description}"
+                                               FontSize="20"
+                                               Grid.Row="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start"/>
+                                    </StackLayout>
+                                </Grid>
+
+                                <Grid Grid.Row="2" BackgroundColor="Transparent" Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Image Grid.Row="0" Grid.Column="0" HeightRequest="200" Source="{Binding gameIcon}"
+                                           HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                                </Grid>
+
+                                <Grid Grid.Row="3" BackgroundColor="Transparent" Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="ic_share.png"/>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
                 </ViewCell>
             </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
-  </ListView>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
+

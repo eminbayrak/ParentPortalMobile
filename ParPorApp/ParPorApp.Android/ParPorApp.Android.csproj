@@ -57,7 +57,7 @@
       <Version>1.0.168</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Build.Framework">
-      <Version>15.5.180</Version>
+      <Version>15.6.82</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp">
       <Version>4.4.1</Version>
@@ -244,7 +244,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\ic_group.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_event.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_contact.png" />
-    <Content Include="Resources\drawable-xxxhdpi\ic_email.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_games.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_message.png" />
@@ -258,16 +257,10 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_grade_18.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\drawable-xxhdpi\ic_email.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\ic_https.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\ic_grade_18.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\drawable-xhdpi\ic_email.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\ic_https.png" />
@@ -276,16 +269,52 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_grade_18.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\drawable-mdpi\ic_email.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\drawable-hdpi\ic_email.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_grade_18.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_https.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\volleyball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\basketball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\soccer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_share.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

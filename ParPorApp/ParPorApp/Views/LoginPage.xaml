@@ -51,8 +51,8 @@
                 </Frame>-->
 
                 <StackLayout>
-                    <abstractions:IconEntry Text="{Binding Username}" Icon="ic_email.png" x:Name="EmailEntry" Keyboard="Email" Placeholder="Email"/>
-                    <abstractions:IconEntry Text="{Binding Password}" IsPassword="True" Icon="ic_https.png" x:Name="PasswordEntry" Placeholder="Password"  />
+                    <abstractions:IconEntry Text="{Binding Username}" Icon="ic_email.png" x:Name="EmailEntry" Placeholder="Email" Keyboard="Email"/>
+                    <abstractions:IconEntry Text="{Binding Password}" Icon="ic_https.png" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
                 </StackLayout>
                 <Button x:Name="LoginButton" Command="{Binding LoginCommand}" Style="{StaticResource FollowButton}"
                         Text="Login" />
