@@ -28,7 +28,7 @@ namespace ParPorApp.Models
         [JsonProperty("gameIcon")]
         public string gameIcon { get; set; }
 
-        [JsonProperty("date")]
-        public string date { get; set; }
+        [JsonProperty("postDate")]
+        public string postDate { get; set; }
     }
 }

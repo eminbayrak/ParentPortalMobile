@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ParPorApp.ViewModels;
-using ParPorApp.ViewModels;
+using Plugin.ExternalMaps;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,11 +8,16 @@ namespace ParPorApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactDetailPage : ContentPage
     {
-        public ContactDetailPage(ViewModels.GroupsViewModel contact)
+        public ContactDetailPage(Models.Newsfeed contact)
         {
             InitializeComponent();
             BindingContext = contact ?? throw new ArgumentNullException();
 
         }
+
+	    private void TakeMeThere_Clicked(object sender, EventArgs e)
+	    {
+			CrossExternalMaps.Current.NavigateTo("Milford", "5735 Wolfpen Pleasant Hill Rd", "Milford", "OH", "45150", "USA", "USA");
+		}
     }
 }

@@ -212,6 +212,9 @@
     <PackageReference Include="Xam.Plugin.Connectivity">
       <Version>3.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.ExternalMaps">
+      <Version>4.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugin.Iconize">
       <Version>1.0.10</Version>
     </PackageReference>

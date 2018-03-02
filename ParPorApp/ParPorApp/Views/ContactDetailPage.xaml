@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="ParPorApp.Views.ContactDetailPage"
-             Title="Profile Details">
+             Title="Detail">
     <ScrollView>
         <Grid ColumnSpacing="0" RowSpacing="0">
             <Grid.RowDefinitions>
@@ -16,28 +16,36 @@
             </Grid.RowDefinitions>
 
             <!--  header background  -->
-            <Image Aspect="AspectFill" Source="HeaderCurved.png" />
-            <Image Aspect="Fill" Margin="0,-1,0,-1" Source="CurvedMask.png" VerticalOptions="End" />
+            <Image Aspect="AspectFill" Source="{Binding GameIcon}" />
+            
 
             <!--  profile image  -->
             <abstractions:CircleImage Grid.Row="0" 
-                                      BorderColor="#C0C0C0"
-                                      BorderThickness="2"
-                                      HeightRequest="100" 
-                                      HorizontalOptions="Center" 
-                                      Source="{Binding ImageUrl}" 
-                                      TranslationY="50" 
-                                      VerticalOptions="End" 
-                                      WidthRequest="100" />
+                   HeightRequest="80" 
+                   HorizontalOptions="Center" 
+                   Source="{Binding ImageUrl}" 
+                   TranslationY="40" 
+                   VerticalOptions="End"
+                   BorderColor="#b6b6bc"
+                   BorderThickness="2"
+                   WidthRequest="80"/>
 
-            <!--  Profile Name  -->
+            <!--  Game Info Section  -->
             <StackLayout Grid.Row="1" Padding="0,50,0,00" HorizontalOptions="Center">
-                <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}" />
-                <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
+                <Label Margin="0,-1" Style="{StaticResource ProfileTagLabel}" Text="{Binding Name}" />
+                <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding EventDate}" />
+                <Label Margin="20,0" Grid.Row="3" Style="{StaticResource ProfileTagLabel}" Text="{Binding Location}" />
+                <Button HorizontalOptions="Center" Grid.Row="4"
+                        TextColor="Blue"
+                        FontSize="20"
+                        Clicked="TakeMeThere_Clicked"
+                        BackgroundColor="Transparent"
+                        Text="Go there">
+                </Button>
             </StackLayout>
 
-            <!--  Social Stats Section  -->
-            <Grid Grid.Row="2" Margin="0,30" ColumnSpacing="0" RowSpacing="0">
+            <BoxView Grid.Row="0" HeightRequest="120" VerticalOptions="Center" BackgroundColor="White" Opacity="0.9"></BoxView>
+            <Grid Grid.Row="0" Margin="0,10" Padding="30" ColumnSpacing="0" RowSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -45,26 +53,25 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout>
-                    <Label Style="{StaticResource StatsNumberLabel}" Text="33" />
-                    <Label Style="{StaticResource StatsCaptionLabel}" Text="Likes" />
+                    <Image Source="{Binding HomeTeamLogo}" 
+                                              WidthRequest="70" HeightRequest="70"/>
+                    <Label Style="{StaticResource StatsCaptionLabel}" Text="{Binding HomeTeamName}" />
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
-                    <Label Style="{StaticResource StatsNumberLabel}" Text="94" />
-                    <Label Style="{StaticResource StatsCaptionLabel}" Text="Following" />
+                    <Label Style="{StaticResource StatsNumberLabel}" Grid.RowSpan="3" Margin="0,30" VerticalOptions="Center" FontSize="40" Text="{Binding VS}" />
+                    
                 </StackLayout>
 
                 <StackLayout Grid.Column="2">
-                    <Label Style="{StaticResource StatsNumberLabel}" Text="957" />
-                    <Label Style="{StaticResource StatsCaptionLabel}" Text="Followers" />
+                    <Image Source="{Binding AwayTeamLogo}" 
+                                              WidthRequest="70" HeightRequest="70"/>
+                    <Label Style="{StaticResource StatsCaptionLabel}" Text="{Binding AwayTeamName}" />
                 </StackLayout>
             </Grid>
-
-            <!--  profile description  -->
-            <Label Margin="20,0" Grid.Row="3" Style="{StaticResource MainBodyLabel}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies arcu nec egestas. Nam porta fermentum aliquam. Nullam tincidunt odio purus." />
-
-            <!--  follow button  -->
-            <Button Grid.Row="4" Margin="20" Style="{StaticResource FollowButton}" Text="Send Message" />
+            <Label Margin="30,20" Grid.Row="3" FontSize="16" FontAttributes="Italic" Text="{Binding Note}" />
+            <!--  send message button  -->
+            <Button Grid.Row="4" Margin="20" Style="{StaticResource MessageButton}" Text="Send a message to coach" />
 
         </Grid>
     </ScrollView>
