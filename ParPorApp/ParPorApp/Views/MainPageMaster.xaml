@@ -8,7 +8,7 @@
              BackgroundColor="#2c2d37"
              Title="Profile">
     <ContentPage.BindingContext>
-        <viewModels:LoginViewModel />
+        <viewModels:UserViewModel />
     </ContentPage.BindingContext>
     <StackLayout>
         <ListView x:Name="MenuItemsListView"
@@ -16,47 +16,12 @@
                   SeparatorColor="DarkSlateGray"
                   HasUnevenRows="true"
                   ItemsSource="{Binding MenuItems}">
-            <ListView.Header>
-                <Grid ColumnSpacing="0" RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="AUTO" />
-                        <RowDefinition Height="AUTO" />
-                        <RowDefinition Height="AUTO" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="AUTO" />
-                    </Grid.RowDefinitions>
-
-                    <!--  header background  -->
-                    <!--<Image Aspect="AspectFill" Source="HeaderCurved.png" />-->
-                    
-                    <!--  profile image  -->
-                    <abstractions:CircleImage Grid.Row="0" 
-                                              BorderColor="#ffffff"
-                                              BorderThickness="1"
-                                              HeightRequest="80" 
-                                              HorizontalOptions="Center" 
-                                              Source="{Binding ImageUrl}" 
-                                              TranslationY="18" 
-                                              VerticalOptions="End" 
-                                              WidthRequest="80" />
-
-                    <!--  Profile Name  -->
-                    <StackLayout Grid.Row="1" Padding="0,40,0,0" HorizontalOptions="Center">
-                        <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}" />
-                        <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
-                    </StackLayout>
-                    </Grid>
-            </ListView.Header>
             
             <ListView.ItemTemplate>
-                <!--<DataTemplate>
-                    <ImageCell ImageSource="{Binding IconSource}"
-                               Text="{Binding Title}"/>
-                </DataTemplate>-->
-                
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical" Padding="10">
+                        <StackLayout Orientation="Vertical" Padding="20,10,0,10"
+                                     Spacing="30">
                             <StackLayout Orientation="Horizontal" Padding="10,0,0,0">
                                 <Image Source="{Binding IconSource}" />
                                 <Label Text="{Binding Title}" TextColor="White" FontSize="Medium"/>

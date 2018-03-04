@@ -32,7 +32,8 @@ namespace ParPorApp.ViewModels
                     }
                     else
                     {
-                        await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Dismiss");
+	                    await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Dismiss");
+	                    
                     }
                     
                 });
@@ -46,29 +47,10 @@ namespace ParPorApp.ViewModels
             if (!string.IsNullOrEmpty(Settings.Username))
             {
                 Username = Settings.Username;
-                Password = Settings.Password;
-            }
+	            Settings.AccessToken = String.Empty;
+			}
+            
         }
-
-        public static ICommand LogoutCommand
-        {
-            get
-            {
-                return new Command(() =>
-                {
-                    Settings.AccessToken = string.Empty;
-                    //debug.writeline(settings.username);
-                    //settings.username = string.empty;
-                    //debug.writeline(settings.password);
-                    //settings.password = string.empty;
-
-                    // navigate to LoginPage
-                });
-            }
-        }
-
-
-
     }
 }
 

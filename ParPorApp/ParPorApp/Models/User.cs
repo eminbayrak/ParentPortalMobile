@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace ParPorApp.Models
 {
-    class User
+	public class User
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string Image { get; set; }
+	    [JsonProperty("FirstName")]
+		public string FirstName { get; set; }
+	    [JsonProperty("LastName")]
+		public string LastName { get; set; }
+	    [JsonProperty("Children")]
+		public string Children { get; set; }
+	    [JsonProperty("Email")]
+		public string Email { get; set; }
+	    [JsonProperty("Image")]
+		public string Image { get; set; }
     }
 }

@@ -12,6 +12,7 @@
               HasUnevenRows="True"
               ItemSelected="NewsfeedView_OnItemSelected"
               ItemsSource="{Binding Items}"
+              SeparatorVisibility = "None" 
               CachingStrategy="RecycleElement">
 
 

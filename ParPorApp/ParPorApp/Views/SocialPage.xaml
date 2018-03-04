@@ -7,7 +7,7 @@
             Title="Newsfeed">
 
     <!--<ContentPage xamarinForms:BottomBarPageExtensions.TabColor="#cfefa7"/>-->
-    <xamarinForms:BottomBarPage.BarTextColor>Black</xamarinForms:BottomBarPage.BarTextColor>
+    <xamarinForms:BottomBarPage.BarTextColor>#7d498c</xamarinForms:BottomBarPage.BarTextColor>
     
     
 </xamarinForms:BottomBarPage>

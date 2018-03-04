@@ -29,7 +29,7 @@
 
     <!-- colorPrimaryDark is used for the status bar -->
 
-    <item name="colorPrimaryDark">#963c3c</item>
+    <item name="colorPrimaryDark">#7d498c</item>
 
     <!-- colorAccent is used as the default value for colorControlActivated
 

@@ -6,7 +6,7 @@
              x:Class="ParPorApp.Views.LatestPage">
     <ListView x:Name="GroupView" 
               HasUnevenRows="True"
-              
+              SeparatorVisibility = "None"
               ItemsSource="{Binding Items}"
               CachingStrategy="RecycleElement">
 

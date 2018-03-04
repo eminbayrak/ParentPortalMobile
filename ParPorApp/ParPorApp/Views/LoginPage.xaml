@@ -53,10 +53,11 @@
                 <StackLayout>
                     <abstractions:IconEntry Text="{Binding Username}" Icon="ic_email.png" x:Name="EmailEntry" Placeholder="Email" Keyboard="Email"/>
                     <abstractions:IconEntry Text="{Binding Password}" Icon="ic_https.png" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
+                    
                 </StackLayout>
                 <Button x:Name="LoginButton" Command="{Binding LoginCommand}" Style="{StaticResource MessageButton}"
                         Text="Login" />
-
+                <Label x:Name="messageLabel" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

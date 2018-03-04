@@ -20,6 +20,7 @@ namespace ParPorApp.Views
             InitializeComponent();
             EmailEntry.Completed += (sender, args) => { PasswordEntry.Focus(); };
             PasswordEntry.Completed += (sender, args) => { LoginButton.Focus(); };
+
             
         }
 

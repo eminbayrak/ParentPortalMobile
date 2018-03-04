@@ -3,8 +3,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">Black</Color>
-            <Color x:Key="PrimaryDark">#B24548</Color>
-            <Color x:Key="Accent">#D96771</Color>
+            <Color x:Key="PrimaryDark">#7d498c</Color>
+            <Color x:Key="Accent">#9D72A9</Color>
             <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
             <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
             <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
@@ -21,7 +21,7 @@
             <!--  colors  -->
             <Color x:Key="HeaderTextColor">Black</Color>
             <Color x:Key="BodyTextColor">Black</Color>
-            <Color x:Key="ButtonBackgroundColor">#D96771</Color>
+            <Color x:Key="ButtonBackgroundColor">#90a959</Color>
             <Color x:Key="BackgroundColor">White</Color>
 
             <!--  font families  -->
@@ -93,6 +93,11 @@
                 <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
                 <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
             </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Accent}" />
+                <!--<Setter Property="BarTextColor" Value="Black" />-->
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

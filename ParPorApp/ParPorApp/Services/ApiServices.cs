@@ -102,8 +102,22 @@ namespace ParPorApp.Services
             return group;
         }
 
-        // get events list
-        public async Task<List<Events>> GetEventsAsync(string accessToken)
+		//Get user list
+	    public async Task<User> GetUsersAsync(string accessToken)
+	    {
+		    var client = new HttpClient();
+		    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+			    "Bearer", accessToken);
+
+		    var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
+
+		    var user = JsonConvert.DeserializeObject<User>(json);
+
+		    return user;
+	    }
+
+		// get events list
+		public async Task<List<Events>> GetEventsAsync(string accessToken)
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(

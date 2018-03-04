@@ -7,47 +7,48 @@ using Xamarin.Forms.Xaml;
 
 namespace ParPorApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPageMaster : ContentPage
-    {
-        public ListView ListView;
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class MainPageMaster : ContentPage
+	{
+		public ListView ListView;
 
-        public MainPageMaster()
-        {
-            InitializeComponent();
+		public MainPageMaster()
+		{
+			InitializeComponent();
 
-            BindingContext = new MainPageMasterViewModel();
-            ListView = MenuItemsListView;
-        }
+			BindingContext = new MainPageMasterViewModel();
+			ListView = MenuItemsListView;
+		}
 
-        class MainPageMasterViewModel : INotifyPropertyChanged
-        {
-            public ObservableCollection<MainPageMenuItem> MenuItems { get; set; }
+		class MainPageMasterViewModel : INotifyPropertyChanged
+		{
+			public ObservableCollection<MainPageMenuItem> MenuItems { get; set; }
 
-            public MainPageMasterViewModel() => MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
-            {
+			public MainPageMasterViewModel() => MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
+			{
 
-                new MainPageMenuItem { Id = 0, Title = "Groups", IconSource="ic_group.png", TargetType=typeof(GroupPage)},
-                new MainPageMenuItem { Id = 1, Title = "Contacts", IconSource="ic_contact.png", TargetType=typeof(SocialPage)},
-                new MainPageMenuItem { Id = 2, Title = "Messages", IconSource="ic_message.png", TargetType=typeof(ApiPage) },
-                new MainPageMenuItem { Id = 3, Title = "Upcoming Events", IconSource="ic_event.png", TargetType=typeof(EventsPage) },
-            });
+				new MainPageMenuItem { Id = 0, Title = "Groups", IconSource="ic_group.png", TargetType=typeof(GroupPage)},
+				new MainPageMenuItem { Id = 1, Title = "Contacts", IconSource="ic_contact.png", TargetType=typeof(SocialPage)},
+				new MainPageMenuItem { Id = 2, Title = "Social", IconSource="ic_message.png", TargetType=typeof(ApiPage) },
+				new MainPageMenuItem { Id = 3, Title = "My Profile", IconSource="ic_event.png", TargetType=typeof(UserProfilePage) }
+			});
 
-            #region INotifyPropertyChanged Implementation
-            public event PropertyChangedEventHandler PropertyChanged;
-            void OnPropertyChanged([CallerMemberName] string propertyName = "")
-            {
-                if (PropertyChanged == null)
-                    return;
+			#region INotifyPropertyChanged Implementation
+			public event PropertyChangedEventHandler PropertyChanged;
+			void OnPropertyChanged([CallerMemberName] string propertyName = "")
+			{
+				if (PropertyChanged == null)
+					return;
 
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-            #endregion
-        }
+				PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+			}
+			#endregion
+		}
 
-        private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new LoginPage());
-        }
-    }
+		private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
+		{
+
+			await Navigation.PushAsync(new LoginPage());
+		}
+	}
 }
