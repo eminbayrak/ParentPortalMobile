@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using Acr.UserDialogs;
 using Microsoft.Build.Framework;
 using ParPorApp.Helpers;
 using ParPorApp.Services;
@@ -22,18 +23,22 @@ namespace ParPorApp.ViewModels
                 return new Command(async () =>
                 {
                     var accesstoken = await ApiServices.LoginAsync(Username, Password);
-
+	                
                     if (!string.IsNullOrEmpty(accesstoken))
                     {
-                        Settings.Username = Username;
+	                    IsBusy = true;
+	                    Settings.Username = Username;
                         Settings.Password = Password;
                         Settings.AccessToken = accesstoken;
                         await Application.Current.MainPage.Navigation.PushAsync(new MainPage(), true);
                     }
                     else
                     {
-	                    await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Dismiss");
 	                    
+						IsBusy = false;
+	                    await UserDialogs.Instance.AlertAsync(string.Format("Wrong email or password :("));
+	                    //await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Dismiss");
+
                     }
                     
                 });
@@ -44,12 +49,10 @@ namespace ParPorApp.ViewModels
 
         public LoginViewModel()
         {
-            if (!string.IsNullOrEmpty(Settings.Username))
-            {
-                Username = Settings.Username;
-	            Settings.AccessToken = String.Empty;
-			}
-            
+	        if (string.IsNullOrEmpty(Settings.Username)) return;
+	        Username = Settings.Username;
+	        Settings.AccessToken = string.Empty;
+
         }
     }
 }

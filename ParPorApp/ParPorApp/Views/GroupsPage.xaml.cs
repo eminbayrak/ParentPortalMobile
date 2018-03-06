@@ -55,10 +55,10 @@ namespace ParPorApp.Views
             //};
             base.OnAppearing();
 
-            //groupView.ItemsSource = new List<Place>
-            //{
-            //    new Place {Address = "5735 Wolfpen Pleasant Hill Rd, Milford, OH 45150"}
-            //};
+	        //groupView.ItemsSource = new List<Place>
+	        //{
+	        //    new Place {Address = "5735 Wolfpen Pleasant Hill Rd, Milford, OH 45150"}
+	        //};
         }
         //protected override async void OnAppearing()
         //{

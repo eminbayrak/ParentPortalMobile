@@ -57,7 +57,7 @@
                 </StackLayout>
                 <Button x:Name="LoginButton" Command="{Binding LoginCommand}" Style="{StaticResource MessageButton}"
                         Text="Login" />
-                <Label x:Name="messageLabel" />
+                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center" Color="#9D72A9" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

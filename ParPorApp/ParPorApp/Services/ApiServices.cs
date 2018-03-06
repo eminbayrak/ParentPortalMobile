@@ -130,30 +130,43 @@ namespace ParPorApp.Services
             return events;
         }
 
+		// Post event
+	    public async Task PutEventAsync(Events events, string accessToken)
+	    {
+		    var client = new HttpClient();
+		    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-        //public class AzureDataService
-        //{
-        //    public MobileServiceClient MobileService { get; set; }
-        //    private IMobileServiceSyncTable eventTable;
+		    var json = JsonConvert.SerializeObject(events);
+		    HttpContent content = new StringContent(json);
+		    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-        //    public async Task Initialize()
-        //    {
-        //        MobileService = new MobileServiceClient("https://parentportal.azurewebsites.net");
-        //        const string path = "syncstore.db";
-        //        //setup local sqlite store and init
-        //        var store = new MobileServiceSQLiteStore(path);
-        //        store.DefineTable();
-        //        await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
-        //        //get sync table that will call out azure
-        //        eventTable = MobileService.GetSyncTable();
+		    var response = await client.PutAsync(
+			    Constants.BaseApiAddress + "api/events" + events.Id, content);
+	    }
 
-        //    }
+		//public class AzureDataService
+		//{
+		//    public MobileServiceClient MobileService { get; set; }
+		//    private IMobileServiceSyncTable eventTable;
 
-        //    public async Task SyncEvent()
-        //    {
-        //        await eventTable.PullAsync("allEvents", eventTable.CreateQuery());
-        //        await MobileService.SyncContext.PushAsync();
-        //    }
-        //}
-    }
+		//    public async Task Initialize()
+		//    {
+		//        MobileService = new MobileServiceClient("https://parentportal.azurewebsites.net");
+		//        const string path = "syncstore.db";
+		//        //setup local sqlite store and init
+		//        var store = new MobileServiceSQLiteStore(path);
+		//        store.DefineTable();
+		//        await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+		//        //get sync table that will call out azure
+		//        eventTable = MobileService.GetSyncTable();
+
+		//    }
+
+		//    public async Task SyncEvent()
+		//    {
+		//        await eventTable.PullAsync("allEvents", eventTable.CreateQuery());
+		//        await MobileService.SyncContext.PushAsync();
+		//    }
+		//}
+	}
 }

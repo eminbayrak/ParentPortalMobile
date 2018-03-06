@@ -21,45 +21,6 @@
             <DataTemplate>
 
                 <ViewCell>
-                    <!--<Frame HasShadow="True">
-                    <StackLayout Orientation="Horizontal">
-                        <abstractions:CircleImage
-                            
-                            Source="{Binding ImageUrl}"
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            BorderColor="#C0C0C0"
-                            BorderThickness="1"
-                            />
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <Label Text="{Binding Name}" FontAttributes="Bold"/>
-                            <Label Text="{Binding Description}"/>
-                        </StackLayout>
-                    </StackLayout>
-                    </Frame>-->
-
-                    <!--<Grid Padding="5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-
-                        </Grid.ColumnDefinitions>
-                        <abstractions:CircleImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BorderColor="Black" BorderThickness="1" Source="{Binding ImageUrl}" Aspect="AspectFill"/>
-
-                        <Label Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
-                        <Label Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Start" Text="{Binding Description}" Font="Small"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
-                        
-                        <Label Grid.Row="0" Grid.Column="3" Text="02/27/2018 - 9:45PM" HorizontalOptions="End" Font="Small"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
-                    </Grid>-->
-
                     <Frame IsClippedToBounds="True"
                            HasShadow="True"
                            BackgroundColor="White">
@@ -138,15 +99,7 @@
                                            Aspect="AspectFill" />
                                 </Grid>
 
-                                <Grid Grid.Row="4" BackgroundColor="Transparent" Padding="5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Image Grid.Row="0" Grid.Column="0" Source="ic_share.png"/>
-                                </Grid>
+                                
                             </Grid>
                         </StackLayout>
                     </Frame>

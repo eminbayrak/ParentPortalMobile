@@ -16,17 +16,17 @@ namespace ParPorApp.ViewModels
     internal class EventsViewModel : INotifyPropertyChanged
     {
         private readonly ApiServices _apiServices = new ApiServices();
-        private List<Events> _event;
+        private List<Events> _events;
 
 
-        public string AccessToken { get; set; }
+        //public string AccessToken { get; set; }
 
-        public List<Events> Event
+        public List<Events> Events
         {
-            get => _event;
+            get => _events;
             set
             {
-                _event = value;
+                _events = value;
                 OnPropertyChanged();
             } 
         }
@@ -36,25 +36,9 @@ namespace ParPorApp.ViewModels
             get
             { return new Command(async () =>
               {
-                Event = await _apiServices.GetEventsAsync(AccessToken);
+	              var accessToken = Settings.AccessToken;
+				  Events = await _apiServices.GetEventsAsync(accessToken);
               });
-            }
-        }
-
-        public ICommand LogoutCommand
-        {
-            get
-            {
-                return new Command(() =>
-                {
-                    Settings.AccessToken = string.Empty;
-                    Debug.WriteLine(Settings.Username);
-                    Settings.Username = string.Empty;
-                    Debug.WriteLine(Settings.Password);
-                    Settings.Password = string.Empty;
-
-                    // navigate to LoginPage
-                });
             }
         }
 

@@ -9,15 +9,14 @@
         <viewModels:EventsViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout"
                      Command="{Binding LogoutCommand}"
                      Clicked="LogoutMenuItem_Clicked"
+                     Icon=""
                      Priority="1"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
     <StackLayout Padding="20">
-        <Entry Text="{Binding AccessToken}"/>
-        <Button Command="{Binding GetEventsCommand}" Text="All Events"/>
         <ListView ItemsSource="{Binding Events}"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
@@ -28,8 +27,7 @@
                                    FontSize="24"
                                    TextColor="RoyalBlue" />
                             <Label Text="{Binding StartDateTime}" />
-                            <Label Text="{Binding GroupId}" />
-                            <Label Text="{Binding LocationId}" />
+                            <Label Text="{Binding EndDateTime}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

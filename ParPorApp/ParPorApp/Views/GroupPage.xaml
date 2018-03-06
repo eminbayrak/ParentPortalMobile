@@ -9,9 +9,6 @@
         <viewModels:GroupsViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
-        
-    </ContentPage.ToolbarItems>
     <StackLayout Padding="20">
         
         <!--<Button Command="{Binding GetGroupsCommand}" Text="Group List"/>-->

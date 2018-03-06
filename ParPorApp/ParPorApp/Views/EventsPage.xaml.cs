@@ -1,4 +1,5 @@
 ﻿using System;
+using ParPorApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,14 +10,24 @@ namespace ParPorApp.Views
     
     public partial class EventsPage : ContentPage
     {
-        public EventsPage()
+	    EventsViewModel eventsViewModel;
+		public EventsPage()
         {
             InitializeComponent();
+	        
+	        BindingContext = eventsViewModel = new EventsViewModel();
         }
 
-        private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
+	    protected override void OnAppearing()
+	    {
+		    base.OnAppearing();
+
+		    eventsViewModel.GetEventsCommand.Execute(null);
+	    }
+		private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
+
         }
     }
 }

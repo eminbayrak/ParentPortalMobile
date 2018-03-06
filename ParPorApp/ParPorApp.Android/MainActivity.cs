@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using IconEntry.FormsPlugin.Android;
@@ -16,8 +17,8 @@ namespace ParPorApp.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            
-            base.OnCreate(bundle);
+			UserDialogs.Init(this);
+			base.OnCreate(bundle);
             //Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             Forms.Init(this, bundle);
             CurrentPlatform.Init();
