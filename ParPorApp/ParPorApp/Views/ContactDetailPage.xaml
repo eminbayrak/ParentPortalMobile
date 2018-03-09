@@ -16,7 +16,7 @@
             </Grid.RowDefinitions>
 
             <!--  header background  -->
-            <Image Aspect="AspectFill" Source="{Binding GameIcon}" />
+            <!--<Image Aspect="AspectFill" Source="{Binding GameIcon}" />-->
             
 
             <!--  profile image  -->
@@ -38,7 +38,7 @@
                 
             </StackLayout>
 
-            <BoxView Grid.Row="0" HeightRequest="120" VerticalOptions="Center" BackgroundColor="White" Opacity="0.9"></BoxView>
+            <!--<BoxView Grid.Row="0" HeightRequest="120" VerticalOptions="Center" BackgroundColor="White" Opacity="0.9"></BoxView>-->
             <Grid Grid.Row="0" Margin="0,10" Padding="30" ColumnSpacing="0" RowSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

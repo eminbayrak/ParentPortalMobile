@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using Microsoft.Build.Framework;
@@ -26,20 +27,26 @@ namespace ParPorApp.ViewModels
 	                
                     if (!string.IsNullOrEmpty(accesstoken))
                     {
-	                    IsBusy = true;
-	                    Settings.Username = Username;
-                        Settings.Password = Password;
-                        Settings.AccessToken = accesstoken;
-                        await Application.Current.MainPage.Navigation.PushAsync(new MainPage(), true);
+	                    using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
+	                    {
+		                    await Task.Delay(2000);
+		                    Settings.Username = Username;
+		                    Settings.Password = Password;
+		                    Settings.AccessToken = accesstoken;
+		                    await Application.Current.MainPage.Navigation.PushAsync(new MainPage(), true);
+						}
+						//IsBusy = true;
+	                    
                     }
                     else
                     {
-	                    
-						IsBusy = false;
-	                    await UserDialogs.Instance.AlertAsync(string.Format("Wrong email or password :("));
-	                    //await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Dismiss");
+	                    await UserDialogs.Instance.AlertAsync(string.Format("Uh Oh! Please check your login info...", 3000)); //Use ShowImage instead
 
-                    }
+						//IsBusy = false;
+						//await UserDialogs.Instance.AlertAsync(string.Format("Wrong email or password :("));
+						//await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Dismiss");
+
+					}
                     
                 });
             }

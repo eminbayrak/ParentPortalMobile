@@ -1,27 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+
              x:Class="ParPorApp.Views.UserProfilePage">
-    <ContentPage.Content>
-        
-        <StackLayout Padding="20">
 
-            
-            <ListView ItemsSource="{Binding Users}"
-                      HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="0,10">
-                                <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Email}"/>
-                                <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding FirstName}" />
+    <ContentPage.BindingContext>
+        <viewModels:UserViewModel />
+    </ContentPage.BindingContext>
 
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout Padding="20">
+
+
+        <ListView ItemsSource="{Binding Users}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0,10">
+                            <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Email}" />
+                            <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding FirstName}" />
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
 </ContentPage>

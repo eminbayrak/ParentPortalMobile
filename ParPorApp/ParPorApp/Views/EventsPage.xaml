@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="ParPorApp.Views.EventsPage"
              Title="Events">
 
@@ -9,15 +10,115 @@
         <viewModels:EventsViewModel />
     </ContentPage.BindingContext>
 
-    <!--<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout"
-                     Command="{Binding LogoutCommand}"
-                     Clicked="LogoutMenuItem_Clicked"
-                     Icon=""
+                     Clicked="AddEvent_Clicked"
+                     Icon="ic_add.png"
+                     Priority="2"/>
+        <ToolbarItem Text="Logout"
+                     Icon="ic_search.png"
                      Priority="1"/>
-    </ContentPage.ToolbarItems>-->
-    <StackLayout Padding="20">
-        <ListView ItemsSource="{Binding Events}"
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="groupView"
+              HasUnevenRows="True"
+              ItemsSource="{Binding Event}"
+              SeparatorVisibility = "None" 
+              CachingStrategy="RecycleElement">
+
+
+        <ListView.ItemTemplate>
+
+            <DataTemplate>
+
+                <ViewCell>
+                    <Frame IsClippedToBounds="True"
+                           HasShadow="True"
+                           BackgroundColor="White">
+                        <Frame.OutlineColor>
+                            <OnPlatform x:TypeArguments="Color"
+                                        Android="Gray"
+                                        iOS="Gray" />
+                        </Frame.OutlineColor>
+                        <Frame.Margin>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        Android="7" iOS="9" />
+                        </Frame.Margin>
+                        <Frame.Padding>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        Android="5" iOS="7" />
+                        </Frame.Padding>
+                        <StackLayout Orientation="Horizontal">
+
+                            <Grid VerticalOptions="CenterAndExpand"
+                                  Padding="0"
+                                  HorizontalOptions="FillAndExpand"
+                                  BackgroundColor="Transparent">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                                    <abstractions:CircleImage Source="{Binding ImageUrl}"
+                                                              VerticalOptions="Start" HeightRequest="30"
+                                                              WidthRequest="30" />
+                                    <Label FontAttributes="None" Grid.Row="0"
+                                           HorizontalTextAlignment="Start"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="12"
+                                           Text="{Binding Name , Mode = TwoWay}" TextColor="Gray" />
+                                    <Label FontAttributes="None" Grid.Row="0"
+                                           HorizontalTextAlignment="End"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="12"
+                                           Text="{Binding PostDate , Mode = TwoWay}" TextColor="Gray" />
+                                </StackLayout>
+
+                                <Grid Grid.Row="1" Padding="10">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding  Name}"
+                                               FontSize="20"
+                                               Grid.Row="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start"/>
+
+                                    </StackLayout>
+                                </Grid>
+                                <Grid Grid.Row="2" Padding="10">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding  Description}"
+                                               FontSize="16"
+                                               Grid.Row="2"
+                                               HorizontalOptions="Start" VerticalOptions="Start"/>
+                                    </StackLayout>
+                                </Grid>
+
+                                <Grid Grid.Row="3" BackgroundColor="Transparent" Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" HeightRequest="200" Source="{Binding GameIcon}"
+                                           Aspect="AspectFill" />
+                                </Grid>
+
+
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <!--<StackLayout Padding="20">
+        <ListView ItemsSource="{Binding Event}"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -33,6 +134,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+    </StackLayout>-->
 
 </ContentPage>

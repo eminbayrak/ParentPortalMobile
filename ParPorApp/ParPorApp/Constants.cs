@@ -14,6 +14,9 @@
         //School
         //public static string BaseApiAddress => "http://10.132.249.50:5000/";
 
-        public static int LogoIconHeight = 120;
+		//Localhost
+	    //public static string BaseApiAddress => "http://localhost:55601/";
+
+		public static int LogoIconHeight = 120;
     }
 }

@@ -16,7 +16,12 @@ using ParPorApp.Helpers;
 using ParPorApp.Models;
 using ParPorApp.Views;
 using Xamarin.Forms;
-
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using Acr.UserDialogs;
+using Android.Media;
+using Encoding = System.Text.Encoding;
 
 namespace ParPorApp.Services
 
@@ -111,13 +116,12 @@ namespace ParPorApp.Services
 
 		    var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
 
-		    var user = JsonConvert.DeserializeObject<User>(json);
-
-		    return user;
-	    }
+			var user = JsonConvert.DeserializeObject<User>(json);
+			return user;
+		}
 
 		// get events list
-		public async Task<List<Events>> GetEventsAsync(string accessToken)
+		public async Task<List<Event>> GetEventsAsync(string accessToken)
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -125,13 +129,13 @@ namespace ParPorApp.Services
 
             var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/events");
 
-            var events = JsonConvert.DeserializeObject<List<Events>>(json);
+            var events = JsonConvert.DeserializeObject<List<Event>>(json);
 
             return events;
         }
 
-		// Post event
-	    public async Task PutEventAsync(Events events, string accessToken)
+		// Put event
+	    public async Task PutEventAsync(Event events, string accessToken)
 	    {
 		    var client = new HttpClient();
 		    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
@@ -142,6 +146,33 @@ namespace ParPorApp.Services
 
 		    var response = await client.PutAsync(
 			    Constants.BaseApiAddress + "api/events" + events.Id, content);
+	    }
+
+		//Post event
+	    public async Task PostEventAsync(Event events, string accessToken)
+	    {
+		    var client = new HttpClient();
+		    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+			var json = JsonConvert.SerializeObject(events);
+			HttpContent content = new StringContent(json);
+			content.Headers.ContentType = new MediaTypeHeaderValue("application/json"); 
+			var response = await client.PostAsync(Constants.BaseApiAddress + "api/events", content);
+		    if (response.IsSuccessStatusCode)
+		    {
+			    using (UserDialogs.Instance.Loading("Please wait...", null, null, true, MaskType.Black))
+			    {
+				    await Task.Delay(2000);
+					await UserDialogs.Instance.AlertAsync(string.Format("Event created!"));
+				}
+				
+			}
+		    else
+		    {
+				await UserDialogs.Instance.AlertAsync(string.Format("Uh oh, something went wrong :("));
+			    Debug.Write(response);
+			}
+			
 	    }
 
 		//public class AzureDataService

@@ -30,7 +30,8 @@ namespace ParPorApp.Views
 				new MainPageMenuItem { Id = 0, Title = "Groups", IconSource="ic_group.png", TargetType=typeof(GroupPage)},
 				new MainPageMenuItem { Id = 1, Title = "Contacts", IconSource="ic_contact.png", TargetType=typeof(SocialPage)},
 				new MainPageMenuItem { Id = 2, Title = "Events", IconSource="ic_message.png", TargetType=typeof(EventsPage) },
-				new MainPageMenuItem { Id = 3, Title = "My Profile", IconSource="ic_event.png", TargetType=typeof(UserProfilePage) }
+				new MainPageMenuItem { Id = 3, Title = "My Profile", IconSource="ic_group.png", TargetType=typeof(UserProfilePage) },
+				new MainPageMenuItem { Id = 4, Title = "Events", IconSource="ic_event.png", TargetType=typeof(AddEventPage) }
 			});
 
 			#region INotifyPropertyChanged Implementation

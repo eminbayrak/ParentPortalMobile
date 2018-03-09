@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParPorApp.Views.AddEventPage"
+             xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             Title="Add a new event">
+
+    <ContentPage.BindingContext>
+        <viewModels:AddEventViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center" Padding ="30">
+        
+        <Label Text="Event Name"></Label>
+        <Entry Text="{Binding Name}"/>
+        <Label Text="Description"></Label>
+        <Entry Text="{Binding Description}"/>
+        <Label Text="Start"></Label>
+        <Entry Text="{Binding StartDateTime}"/>
+        <Label Text="Finish"></Label>
+        <Entry Text="{Binding EndDateTime}"/>
+
+        <Button Command="{Binding AddEventCommand}"
+                Clicked="ReturnEventPage_Clicked"
+                Style="{StaticResource MessageButton}"
+                Text="Add Event"/>
+
+    </StackLayout>
+</ContentPage>

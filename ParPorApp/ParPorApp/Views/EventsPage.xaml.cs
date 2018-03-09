@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using ParPorApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,10 +25,15 @@ namespace ParPorApp.Views
 
 		    eventsViewModel.GetEventsCommand.Execute(null);
 	    }
-		private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new LoginPage());
+		//private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
+  //      {
+  //          await Navigation.PushAsync(new LoginPage());
 
-        }
+  //      }
+
+	    private async Task AddEvent_Clicked(object sender, EventArgs e)
+	    {
+			await Navigation.PushAsync(new AddEventPage());
+		}
     }
 }

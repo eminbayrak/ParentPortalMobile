@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -33,20 +34,6 @@ namespace ParPorApp.ViewModels
 				{
 					var accessToken = Settings.AccessToken;
 					Users = await _apiServices.GetUsersAsync(accessToken);
-				});
-			}
-		}
-
-		public static ICommand LogoutCommand
-		{
-			get
-			{
-				return new Command(() =>
-				{
-					Settings.AccessToken = String.Empty;
-					//debug.writeline(settings.username);
-					Settings.Password = String.Empty;
-					// navigate to LoginPage
 				});
 			}
 		}

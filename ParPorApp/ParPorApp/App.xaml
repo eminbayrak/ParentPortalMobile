@@ -21,7 +21,7 @@
             <!--  colors  -->
             <Color x:Key="HeaderTextColor">Black</Color>
             <Color x:Key="BodyTextColor">Black</Color>
-            <Color x:Key="ButtonBackgroundColor">#90a959</Color>
+            <Color x:Key="ButtonBackgroundColor">#58edf4</Color>
             <Color x:Key="BackgroundColor">White</Color>
 
             <!--  font families  -->
@@ -87,7 +87,7 @@
 
             <Style x:Key="MessageButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
                 <Setter Property="HeightRequest" Value="40" />
                 <Setter Property="BorderRadius" Value="20" />
                 <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
