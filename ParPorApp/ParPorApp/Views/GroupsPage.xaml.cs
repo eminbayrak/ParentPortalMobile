@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Android.Locations;
 using ParPorApp.Models;
 using ParPorApp.ViewModels;
 using Xamarin.Forms;

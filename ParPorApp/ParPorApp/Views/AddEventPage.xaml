@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParPorApp.Views.AddEventPage"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              Title="Add a new event">
 
     <ContentPage.BindingContext>
@@ -11,14 +12,31 @@
 
     <StackLayout VerticalOptions="Center" Padding ="30">
         
-        <Label Text="Event Name"></Label>
-        <Entry Text="{Binding Name}"/>
-        <Label Text="Description"></Label>
-        <Entry Text="{Binding Description}"/>
-        <Label Text="Start"></Label>
-        <Entry Text="{Binding StartDateTime}"/>
-        <Label Text="Finish"></Label>
-        <Entry Text="{Binding EndDateTime}"/>
+        <Label Text="Event Type" FontAttributes="Bold">Select the event type</Label>
+        <Picker SelectedItem="{Binding Name}">
+            <Picker.Items>
+                <x:String>Game</x:String>
+                <x:String>Training</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Description" FontAttributes="Bold"></Label>
+        <Entry Text="{Binding Description}" Placeholder="enter a detail"/>
+
+        <Label Text="Start" FontAttributes="Bold"></Label>
+        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding StartDateTime}"
+                    MinimumDate="{x:Static system:DateTime.UtcNow}">
+            <DatePicker.Format>MMMM dd, yy</DatePicker.Format>
+        </DatePicker>
+        <TimePicker></TimePicker>
+        <Label Text="Finish" FontAttributes="Bold"></Label>
+        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding EndDateTime}"
+                    MinimumDate="{x:Static system:DateTime.UtcNow}">
+            <DatePicker.Format>MMMM dd, yy</DatePicker.Format>
+        </DatePicker>
+
+        <Label Text="Location" FontAttributes="Bold"></Label>
+        <Entry Text="{Binding LocationId}" Placeholder="input the location address"/>
 
         <Button Command="{Binding AddEventCommand}"
                 Clicked="ReturnEventPage_Clicked"

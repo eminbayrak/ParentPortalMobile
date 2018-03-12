@@ -363,13 +363,7 @@
     <BundleResource Include="Resources\ic_place%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\volleyball.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\football.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\basketball.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\soccer.png" />
@@ -397,5 +391,20 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_add%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_exit%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_exit%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\basketball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\volleyball.png" />
   </ItemGroup>
 </Project>

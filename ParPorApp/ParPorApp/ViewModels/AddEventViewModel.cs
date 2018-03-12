@@ -4,8 +4,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
-using Android.Media.Audiofx;
-using Android.Util;
 using ParPorApp.Helpers;
 using ParPorApp.Models;
 using ParPorApp.Services;
@@ -17,11 +15,11 @@ namespace ParPorApp.ViewModels
     {
 		ApiServices _apiServices = new ApiServices();
 	    public string Description { get; set; }
-	    public string EndDateTime { get; set; }
+	    public DateTime EndDateTime { get; set; }
 	    public string GroupId { get; set; }
 	    public string Id { get; set; }
 	    public string LocationId { get; set; }
-	    public string StartDateTime { get; set; }
+	    public DateTime StartDateTime { get; set; }
 	    public string Name { get; set; }
 
 		public ICommand AddEventCommand

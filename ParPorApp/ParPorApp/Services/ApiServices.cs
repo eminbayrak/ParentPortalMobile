@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Acr.UserDialogs;
-using Android.Media;
 using Encoding = System.Text.Encoding;
 
 namespace ParPorApp.Services
