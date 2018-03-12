@@ -27,5 +27,14 @@ namespace ParPorApp.Models
 
         [JsonProperty("Name")]
 		public string Name { get; set; }
-	}
+
+        [JsonProperty("First")]
+        public  string First { get; set; }
+
+        [JsonProperty("ImageUrl")]
+        public string ImageUrl { get; set; }
+
+        [JsonProperty("PostDate")]
+        public string PostDate { get; set; }
+    }
 }

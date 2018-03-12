@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="ParPorApp.Views.EventsPage"
              Title="Events">
 
@@ -20,7 +19,7 @@
                      Icon="ic_search.png"
                      Priority="1"/>
     </ContentPage.ToolbarItems>
-    <ListView x:Name="groupView"
+    <ListView 
               HasUnevenRows="True"
               ItemsSource="{Binding Event}"
               SeparatorVisibility = "None" 
@@ -70,12 +69,12 @@
                                            HorizontalTextAlignment="Start"
                                            VerticalTextAlignment="Center"
                                            FontSize="12"
-                                           Text="Name" TextColor="Gray" />
+                                           Text="{Binding First}" TextColor="Gray" />
                                     <Label FontAttributes="None" Grid.Row="0"
                                            HorizontalTextAlignment="End"
                                            VerticalTextAlignment="Center"
                                            FontSize="12"
-                                           Text="{Binding StartDateTime}" TextColor="Gray" />
+                                           Text="{Binding PostDate}" TextColor="Gray" />
                                 </StackLayout>
 
                                 <Grid Grid.Row="1" Padding="10">

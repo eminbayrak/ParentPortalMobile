@@ -161,8 +161,7 @@ namespace ParPorApp.Services
 		    {
 			    using (UserDialogs.Instance.Loading("Please wait...", null, null, true, MaskType.Black))
 			    {
-				    await Task.Delay(2000);
-					await UserDialogs.Instance.AlertAsync(string.Format("Event created!"));
+				    await UserDialogs.Instance.AlertAsync(string.Format("Event created!"));
 				}
 				
 			}
