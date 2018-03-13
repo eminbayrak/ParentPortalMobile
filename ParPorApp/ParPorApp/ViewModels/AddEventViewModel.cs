@@ -15,11 +15,11 @@ namespace ParPorApp.ViewModels
     {
 		ApiServices _apiServices = new ApiServices();
 	    public string Description { get; set; }
-	    public DateTime? EndDateTime { get; set; }
+	    public String EndDateTime { get; set; }
 	    public string GroupId { get; set; }
 	    public string Id { get; set; }
 	    public string LocationId { get; set; }
-	    public DateTime? StartDateTime { get; set; }
+	    public String StartDateTime { get; set; }
 	    public string Name { get; set; }
         
         public ICommand AddEventCommand
@@ -41,5 +41,6 @@ namespace ParPorApp.ViewModels
 				});
 		    }
 	    }
+
     }
 }

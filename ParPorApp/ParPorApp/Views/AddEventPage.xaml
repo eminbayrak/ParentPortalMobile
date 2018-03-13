@@ -5,6 +5,7 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:system="clr-namespace:System;assembly=netstandard"
              xmlns:services="clr-namespace:ParPorApp.Services;assembly=ParPorApp"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=netstandard"
              Title="Add a new event">
 
     <ContentPage.BindingContext>
@@ -41,41 +42,16 @@
             <Label Text="Finish Date" Grid.Row="0" Grid.Column="1"></Label>
             <TimePicker x:Name="StartTime" Format="hh:mm" Grid.Row="1" Grid.Column="0" />
             <TimePicker x:Name="EndTime" Format="hh:mm" Grid.Row="1" Grid.Column="1" />
-            <DatePicker Format="MMM/dd/yyyy" x:Name="StartDatePicker" DateSelected="DatePicker_StartDateSelected" Grid.Column="0" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
-            <DatePicker Format="MMM/dd/yyyy" x:Name="FinishDatePicker" DateSelected="DatePicker_FinishDateSelected" Grid.Column="1" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
-           
-            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime}" />
-            <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime}" />
+            <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_StartDateSelected" Grid.Column="0" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
+            <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_FinishDateSelected" Grid.Column="1" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
+
+            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay}" />
+            <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime, Mode=TwoWay}" />
         </Grid>
         
-
-
-        <!--<services:DateTimePicker Value="{Binding StartDateTime}"/>
-        <services:DateTimePicker Value="{Binding EndDateTime}" />-->
-
-    <!--<StackLayout>
-
-            <DatePicker VerticalOptions="CenterAndExpand" 
-                    MinimumDate="{x:Static system:DateTime.UtcNow}" 
-                        DateSelected="DatePicker_StartDateSelected">
-            <DatePicker.Format>MMMM dd, yy</DatePicker.Format>
-        </DatePicker>
-        <TimePicker x:Name="StartTime"></TimePicker>
-        <TimePicker x:Name="EndTime"></TimePicker>
-        <Label Text="Finish" FontAttributes="Bold"></Label>
-            <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding EndDateTime}" 
-                    MinimumDate="{x:Static system:DateTime.UtcNow}" DateSelected="DatePicker_FinishDateSelected">
-            <DatePicker.Format>MMMM dd, yy</DatePicker.Format>
-        </DatePicker>
-
-        <Label x:Name="StartDate"  FontAttributes="Bold"   Text="{Binding StartDateTime}" />
-        <Label x:Name="FinishDate" FontAttributes="Bold"  Text="{Binding EndDateTime}" />
-    </StackLayout>-->
-
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Label Text="Location" FontAttributes="Bold"></Label>
         <Entry Text="{Binding LocationId}" Placeholder="input the location address"/>
-        
 
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Button Command="{Binding AddEventCommand}"

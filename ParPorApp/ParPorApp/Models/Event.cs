@@ -11,7 +11,7 @@ namespace ParPorApp.Models
 		public string Description { get; set; }
 
 	    [JsonProperty("StartDateTime")]
-	    public DateTime? StartDateTime { get; set; }
+	    public String StartDateTime { get; set; }
 
         [JsonProperty("GroupId")]
 		public string GroupId { get; set; }
@@ -23,7 +23,7 @@ namespace ParPorApp.Models
 		public string LocationId { get; set; }
 
 	    [JsonProperty("EndDateTime")]
-	    public DateTime? EndDateTime { get; set; }
+	    public String EndDateTime { get; set; }
 
         [JsonProperty("Name")]
 		public string Name { get; set; }
