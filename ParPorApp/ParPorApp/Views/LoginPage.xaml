@@ -50,14 +50,13 @@
                     </Grid>
                 </Frame>-->
 
-                <StackLayout>
+                <StackLayout Padding="30">
                     <abstractions:IconEntry Text="{Binding Username}" Icon="ic_email.png" x:Name="EmailEntry" Placeholder="Email" Keyboard="Email"/>
                     <abstractions:IconEntry Text="{Binding Password}" Icon="ic_https.png" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
-                    
+                    <Button x:Name="LoginButton" Command="{Binding LoginCommand}" Style="{StaticResource MessageButton}" Text="Log In" />
+                    <Button Text="Forgot password?" TextColor="{StaticResource LightTextColor}" BackgroundColor="Transparent" Clicked="ForgotPwdButton_OnClicked"/>
                 </StackLayout>
-                <Button x:Name="LoginButton" Command="{Binding LoginCommand}" Style="{StaticResource MessageButton}"
-                        Text="Login" />
-                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center" Color="#9D72A9" />
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

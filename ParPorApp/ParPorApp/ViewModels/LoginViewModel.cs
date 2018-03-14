@@ -52,6 +52,7 @@ namespace ParPorApp.ViewModels
             }
         }
 
+
         private ApiServices ApiServices { get; set; } = new ApiServices();
 
         public LoginViewModel()

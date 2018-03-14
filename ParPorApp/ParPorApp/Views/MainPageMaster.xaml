@@ -6,11 +6,13 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              x:Class="ParPorApp.Views.MainPageMaster"
              BackgroundColor="#2c2d37"
+             Icon="hamburger.png"
              Title="Profile">
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
     </ContentPage.BindingContext>
     <StackLayout>
+        <BoxView HeightRequest="80"/>
         <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="Default"
                   SeparatorColor="DarkSlateGray"
@@ -36,8 +38,7 @@
 
         <Button Image="ic_exit.png" 
                 Text="Signout" 
-                TextColor="White" 
-                BackgroundColor="#B24548"
+                Style="{StaticResource MessageButton}"
                 Command="{Binding LogoutCommand}" 
                 Clicked="LogoutMenuItem_Clicked"
                 VerticalOptions="End"/>

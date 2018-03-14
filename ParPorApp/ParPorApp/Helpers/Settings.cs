@@ -40,6 +40,17 @@ namespace ParPorApp.Helpers
             }
         }
 
+        public static string LastUsedEmail
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(SettingsKey, value);
+            }
+        }
         public static string Username
         {
             get

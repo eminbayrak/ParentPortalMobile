@@ -4,8 +4,6 @@
              x:Class="ParPorApp.Views.AddEventPage"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:system="clr-namespace:System;assembly=netstandard"
-             xmlns:services="clr-namespace:ParPorApp.Services;assembly=ParPorApp"
-             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=netstandard"
              Title="Add a new event">
 
     <ContentPage.BindingContext>
@@ -14,7 +12,7 @@
 
     <StackLayout VerticalOptions="Center" Padding ="20" Spacing="0">
         
-        <Label Text="Event Type" FontAttributes="Bold">Event type</Label>
+        <Label Text="Event Type" FontAttributes="Bold">Event Type</Label>
         <Picker SelectedItem="{Binding Name}" Title="select the event type">
             <Picker.Items>
                 <x:String>Game</x:String>
@@ -36,16 +34,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                
             </Grid.ColumnDefinitions>
-            <Label Text="Start Date" Grid.Row="0" Grid.Column="0"></Label>
-            <Label Text="Finish Date" Grid.Row="0" Grid.Column="1"></Label>
-            <TimePicker x:Name="StartTime" Format="hh:mm" Grid.Row="1" Grid.Column="0" />
-            <TimePicker x:Name="EndTime" Format="hh:mm" Grid.Row="1" Grid.Column="1" />
+            <Label Text="Start Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Text="Finish Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"></Label>
+            <TimePicker x:Name="StartTime" Format="hh:mm tt" Grid.Row="1" Grid.Column="0" />
+            <TimePicker x:Name="EndTime" Format="hh:mm tt" Grid.Row="1" Grid.Column="1" />
             <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_StartDateSelected" Grid.Column="0" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
             <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_FinishDateSelected" Grid.Column="1" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
 
-            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay}" />
+            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay, StringFormat=''}" />
             <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime, Mode=TwoWay}" />
         </Grid>
         

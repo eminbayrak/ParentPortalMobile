@@ -76,13 +76,13 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout>
-                    <Button Grid.Row="4" HorizontalOptions="Center" BackgroundColor="#ecf2f1" Image="ic_share.png" Text="Share"  TextColor="Black" Clicked="Share_onClicked" />
+                    <Button Grid.Row="4" HorizontalOptions="Center"  Style="{StaticResource LoginButton}" Image="ic_share.png" Text="Share"  TextColor="Black" Clicked="Share_onClicked" />
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
                     <Button HorizontalOptions="Center"
                             Clicked="TakeMeThere_Clicked"
-                            BackgroundColor="#d1b4e0"
+                            Style="{StaticResource LoginButton}"
                             Image="ic_navigation.png"
                             Text="Navigate">
                     </Button>
@@ -90,7 +90,7 @@
                 </StackLayout>
 
                 <StackLayout Grid.Column="2">
-                    <Button HorizontalOptions="Center" BackgroundColor="#f9f3c8" Text="Weather" Image="ic_weather.png"/>
+                    <Button HorizontalOptions="Center"  Style="{StaticResource LoginButton}" Text="Weather" Image="ic_weather.png"/>
                 </StackLayout>
             </Grid>
 
