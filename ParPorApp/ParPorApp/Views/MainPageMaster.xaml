@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,7 +6,7 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              x:Class="ParPorApp.Views.MainPageMaster"
              BackgroundColor="#2c2d37"
-             Icon="hamburger.png"
+             Icon="ic_menu.png"
              Title="Profile">
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
@@ -14,8 +14,9 @@
     <StackLayout>
         <BoxView HeightRequest="80"/>
         <ListView x:Name="MenuItemsListView"
-                  SeparatorVisibility="Default"
+                  SeparatorVisibility="None"
                   SeparatorColor="DarkSlateGray"
+                  BackgroundColor="#2c2d37"
                   HasUnevenRows="true"
                   ItemsSource="{Binding MenuItems}">
             
@@ -38,7 +39,8 @@
 
         <Button Image="ic_exit.png" 
                 Text="Signout" 
-                Style="{StaticResource MessageButton}"
+                TextColor="White"
+                FontAttributes="Bold"
                 Command="{Binding LogoutCommand}" 
                 Clicked="LogoutMenuItem_Clicked"
                 VerticalOptions="End"/>

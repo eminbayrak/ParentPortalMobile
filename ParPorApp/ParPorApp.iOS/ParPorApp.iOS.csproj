@@ -102,6 +102,15 @@
     <BundleResource Include="Resources\Default.png" />
     <BundleResource Include="Resources\Default%402x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\ic_navigation.png" />
+    <BundleResource Include="Resources\ic_navigation%402x.png" />
+    <BundleResource Include="Resources\ic_navigation%403x.png" />
+    <BundleResource Include="Resources\ic_share.png" />
+    <BundleResource Include="Resources\ic_share%402x.png" />
+    <BundleResource Include="Resources\ic_share%403x.png" />
+    <BundleResource Include="Resources\ic_weather.png" />
+    <BundleResource Include="Resources\ic_weather%402x.png" />
+    <BundleResource Include="Resources\ic_weather%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -198,11 +207,14 @@
       <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>2.5.0.280555</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\ParPorApp\ParPorApp.csproj">
-      <Project>{993E84F6-291B-4D40-A55D-DD707E0EBFBE}</Project>
+      <Project>{BAC811A8-4688-4048-BBA2-5996DDD2B694}</Project>
       <Name>ParPorApp</Name>
     </ProjectReference>
   </ItemGroup>

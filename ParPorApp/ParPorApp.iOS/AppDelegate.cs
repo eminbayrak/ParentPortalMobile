@@ -24,12 +24,15 @@ namespace ParPorApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             // Set app theme
-            UITabBar.Appearance.BarTintColor = UIColor.FromRGB(188, 75, 75);
+            UITabBar.Appearance.BarTintColor = UIColor.LightTextColor;
             UITabBar.Appearance.TintColor = UIColor.White;
             UIProgressView.Appearance.TintColor = UIColor.FromRGB(188, 75, 75);
             LoadApplication(new App());
-
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(255, 20, 153);
+            UINavigationBar.Appearance.TintColor = UIColor.White;
             return base.FinishedLaunching(app, options);
+
+
         }
     }
 }

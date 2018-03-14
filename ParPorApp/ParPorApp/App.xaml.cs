@@ -27,7 +27,8 @@ namespace ParPorApp
                     var loginViewModel = new LoginViewModel();
                     loginViewModel.LoginCommand.Execute(null);
                 }
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new MainPage()){
+                };
             }
             else if (!string.IsNullOrEmpty(Settings.Username)
                   && !string.IsNullOrEmpty(Settings.Password))

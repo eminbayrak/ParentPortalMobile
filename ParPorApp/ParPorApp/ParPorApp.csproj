@@ -45,6 +45,7 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="2.0.2" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.280555" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,9 +62,6 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\AddEventPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\PlacesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\UserProfilePage.xaml">
