@@ -116,8 +116,9 @@ namespace ParPorApp.Services
 		    var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
 
 			var user = JsonConvert.DeserializeObject<User>(json);
-			return user;
-		}
+
+	        return user;
+	    }
 
 		// get events list
 		public async Task<List<Event>> GetEventsAsync(string accessToken)

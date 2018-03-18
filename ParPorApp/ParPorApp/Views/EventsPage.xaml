@@ -4,6 +4,7 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="ParPorApp.Views.EventsPage"
+             NavigationPage.HasBackButton="False"
              Title="Events">
 
     <ContentPage.BindingContext>
@@ -11,12 +12,10 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Logout"
-                     Clicked="AddEvent_Clicked"
+        <ToolbarItem Clicked="AddEvent_Clicked"
                      Icon="ic_add.png"
                      Priority="2"/>
-        <ToolbarItem Text="Logout"
-                     Icon="ic_search.png"
+        <ToolbarItem Icon="ic_search.png"
                      Priority="1"/>
     </ContentPage.ToolbarItems>
     <ListView 

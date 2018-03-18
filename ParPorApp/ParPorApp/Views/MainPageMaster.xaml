@@ -41,6 +41,7 @@
                 Text="Signout" 
                 TextColor="White"
                 FontAttributes="Bold"
+                BackgroundColor="Transparent"
                 Command="{Binding LogoutCommand}" 
                 Clicked="LogoutMenuItem_Clicked"
                 VerticalOptions="End"/>

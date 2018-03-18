@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace ParPorApp.Models
 {
-    class Event
+    public class Event
     {
 	    [JsonProperty("Description")]
 		public string Description { get; set; }

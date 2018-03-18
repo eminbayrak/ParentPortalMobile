@@ -33,11 +33,11 @@ namespace ParPorApp
             else if (!string.IsNullOrEmpty(Settings.Username)
                   && !string.IsNullOrEmpty(Settings.Password))
             {
-                MainPage = new NavigationPage(new LoginPage());
+                MainPage = new NavigationPage(new WelcomePage());
             }
             else
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new LoginPage());
             }
         }
 

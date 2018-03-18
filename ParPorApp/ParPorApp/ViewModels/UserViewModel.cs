@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using ParPorApp.Helpers;
@@ -14,9 +15,9 @@ namespace ParPorApp.ViewModels
 	public class UserViewModel : INotifyPropertyChanged
 	{
 		private readonly ApiServices _apiServices = new ApiServices();
-		private User _users;
+	    private User _users;
 
-		public User Users
+        public User Users
 		{
 			get => _users;
 			set

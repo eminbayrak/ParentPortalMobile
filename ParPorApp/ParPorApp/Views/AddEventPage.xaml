@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParPorApp.Views.AddEventPage"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:viewGroup="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:system="clr-namespace:System;assembly=netstandard"
              Title="Add a new event">
-
     <ContentPage.BindingContext>
         <viewModels:AddEventViewModel/>
     </ContentPage.BindingContext>
+    <!--<ContentPage.Resources>
+        
+        <viewGroup:GroupsViewModel x:Key="GroupsViewModel"/>
+    </ContentPage.Resources>-->
 
     <StackLayout VerticalOptions="Center" Padding ="20" Spacing="10">
         
@@ -45,9 +49,13 @@
             <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay, StringFormat=''}" />
             <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime, Mode=TwoWay}" />
         </Grid>
-        
+
+        <!--<BoxView WidthRequest="5" BackgroundColor="Transparent"/>
+        <Label Text="Group" FontAttributes="Bold" />
+        <Picker Title="Select a group" BindingContext="{StaticResource GroupsViewModel}" />-->
+           
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
-        <Label Text="Location" FontAttributes="Bold"></Label>
+        <Label Text="Location" FontAttributes="Bold" />
         <Entry Text="{Binding LocationId}" Placeholder="input the location address"/>
 
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>

@@ -30,7 +30,7 @@ namespace ParPorApp.Views
             //};
         }
 
-	    protected override void OnAppearing()
+        protected override void OnAppearing()
 	    {
 		    base.OnAppearing();
 

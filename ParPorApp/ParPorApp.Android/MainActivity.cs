@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using IconEntry.FormsPlugin.Android;
 using Microsoft.WindowsAzure.MobileServices;
+using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -24,8 +25,7 @@ namespace ParPorApp.Droid
             CurrentPlatform.Init();
             LoadApplication(new App());
             IconEntryRenderer.Init();
-            
-            
+            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.ic_logo;
         }
     }
 }

@@ -4,7 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ParPorApp.ViewModels;
+using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +17,8 @@ namespace ParPorApp.Views
 		public AddEventPage ()
 		{
 			InitializeComponent ();
-		}
+		    //BindingContext = new GroupsViewModel();
+        }
 
 	    private void DatePicker_StartDateSelected(object sender, DateChangedEventArgs e)
 	    {
@@ -30,8 +32,9 @@ namespace ParPorApp.Views
 
         private async Task ReturnEventPage_Clicked(object sender, EventArgs e)
 		{
-		    await Task.Delay(3000);
-			await Navigation.PushAsync(new EventsPage());
+            await Task.Delay(3000);
+		    CrossLocalNotifications.Current.Show("New Event!", "You recieved a new event!", 1, DateTime.UtcNow.AddSeconds(8));
+            await Navigation.PushAsync(new EventsPage());
 		}
 
 	}

@@ -15,11 +15,11 @@ namespace ParPorApp.ViewModels
     {
 		ApiServices _apiServices = new ApiServices();
 	    public string Description { get; set; }
-	    public String EndDateTime { get; set; }
+	    public string EndDateTime { get; set; }
 	    public string GroupId { get; set; }
 	    public string Id { get; set; }
 	    public string LocationId { get; set; }
-	    public String StartDateTime { get; set; }
+	    public string StartDateTime { get; set; }
 	    public string Name { get; set; }
         
         public ICommand AddEventCommand
@@ -34,7 +34,8 @@ namespace ParPorApp.ViewModels
 							Name = Name,
 							Description = Description,
 							StartDateTime = StartDateTime,
-							EndDateTime = EndDateTime
+							EndDateTime = EndDateTime,
+                            GroupId = GroupId
 						};
 						await _apiServices.PostEventAsync(events, Settings.AccessToken);
 					
