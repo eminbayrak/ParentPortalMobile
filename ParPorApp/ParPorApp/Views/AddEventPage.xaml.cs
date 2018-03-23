@@ -33,9 +33,9 @@ namespace ParPorApp.Views
         private async Task ReturnEventPage_Clicked(object sender, EventArgs e)
 		{
             await Task.Delay(3000);
-		    CrossLocalNotifications.Current.Show("New Event!", "You recieved a new event!", 1, DateTime.UtcNow.AddSeconds(8));
-            await Navigation.PushAsync(new EventsPage());
-		}
+		    await Navigation.PushAsync(new EventsPage());
+		    CrossLocalNotifications.Current.Show("New Event!", "A new content has posted.", 1, DateTime.UtcNow.AddSeconds(8));
+        }
 
 	}
 }

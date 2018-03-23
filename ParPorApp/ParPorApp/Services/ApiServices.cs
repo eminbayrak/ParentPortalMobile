@@ -110,14 +110,26 @@ namespace ParPorApp.Services
 	    public async Task<User> GetUsersAsync(string accessToken)
 	    {
 		    var client = new HttpClient();
-		    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+	        client.MaxResponseContentBufferSize = 256000;
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
 			    "Bearer", accessToken);
 
 		    var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
 
 			var user = JsonConvert.DeserializeObject<User>(json);
-
+	        //foreach (var dict in user)
+	        //{
+	        //    foreach (var kvp in dict)
+	        //    {
+	        //        Console.WriteLine(kvp.Key + ": " + kvp.Value);
+	        //    }
+	        //    Console.WriteLine();
+	        //}
+            Debug.Write(json);
 	        return user;
+
+            
 	    }
 
 		// get events list
@@ -127,7 +139,7 @@ namespace ParPorApp.Services
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Bearer", accessToken);
 
-            var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/events");
+            var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/events?sort=desc");
 
             var events = JsonConvert.DeserializeObject<List<Event>>(json);
 
@@ -162,7 +174,7 @@ namespace ParPorApp.Services
 		    {
 			    using (UserDialogs.Instance.Loading("Please wait...", null, null, true, MaskType.Black))
 			    {
-				    await UserDialogs.Instance.AlertAsync(string.Format("Event created!"));
+				    await UserDialogs.Instance.AlertAsync(string.Format("Event created :)"));
 				}
 				
 			}

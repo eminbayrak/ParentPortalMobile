@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace ParPorApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContactDetailPage : ContentPage
+    public partial class NewsfeedDetailPage : ContentPage
     {
 	    
-		public ContactDetailPage(Models.Newsfeed contact)
+		public NewsfeedDetailPage(Models.Newsfeed contact)
         {
             InitializeComponent();
             BindingContext = contact ?? throw new ArgumentNullException();

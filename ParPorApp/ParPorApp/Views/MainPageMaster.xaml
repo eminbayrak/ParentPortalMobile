@@ -11,8 +11,9 @@
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
     </ContentPage.BindingContext>
+    
     <StackLayout>
-        <BoxView HeightRequest="80"/>
+        <Button Clicked="Profile_Clicked" BackgroundColor="Transparent"  VerticalOptions="Start" HorizontalOptions="End" Image="ic_settings.png" />
         <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="None"
                   SeparatorColor="DarkSlateGray"

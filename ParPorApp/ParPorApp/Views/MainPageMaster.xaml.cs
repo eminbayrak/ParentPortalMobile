@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,7 +29,8 @@ namespace ParPorApp.Views
                 new MainPageMenuItem { Id = 0, Title = "Groups", IconSource="ic_group.png", TargetType=typeof(GroupPage)},
 				new MainPageMenuItem { Id = 1, Title = "Contacts", IconSource="ic_message.png", TargetType=typeof(SocialPage)},
 				new MainPageMenuItem { Id = 2, Title = "Events", IconSource="ic_event.png", TargetType=typeof(EventsPage) },
-			    new MainPageMenuItem { Id = 2, Title = "Profile", IconSource="ic_contact.png", TargetType=typeof(UserProfilePage) }
+			    new MainPageMenuItem { Id = 3, Title = "Profile", IconSource="ic_contact.png", TargetType=typeof(UserProfilePage) },
+			    new MainPageMenuItem { Id = 4, Title = "API Page", IconSource="ic_contact.png", TargetType=typeof(ApiPage) }
 
             });
 
@@ -49,5 +51,10 @@ namespace ParPorApp.Views
 
 			await Navigation.PushAsync(new LoginPage());
 		}
+
+	    private async Task Profile_Clicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushModalAsync(new ProfilePage());
+	    }
 	}
 }

@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace ParPorApp.ViewModels
 {
-	public class UserViewModel : INotifyPropertyChanged
+	public sealed class UserViewModel : INotifyPropertyChanged
 	{
 		private readonly ApiServices _apiServices = new ApiServices();
 	    private User _users;
@@ -41,7 +41,7 @@ namespace ParPorApp.ViewModels
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+	    private void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}

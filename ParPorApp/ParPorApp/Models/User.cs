@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 
 namespace ParPorApp.Models
 {
+    
 	public class User
     {
 	    [JsonProperty("FirstName")]
@@ -17,5 +18,10 @@ namespace ParPorApp.Models
 		public string Email { get; set; }
 	    [JsonProperty("Image")]
 		public string Image { get; set; }
+    }
+    [JsonObject]
+    public class UserAccount
+    {
+        public string UserInfoViewModel { get; set; }
     }
 }

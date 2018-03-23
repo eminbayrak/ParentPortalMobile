@@ -15,13 +15,13 @@ namespace ParPorApp.Views
         public RegisterPage()
         {
             InitializeComponent();
-            Init();
+            //Init();
         }
 
-        void Init()
-        {
-            LogoIcon.HeightRequest = Constants.LogoIconHeight;
-        }
+        //void Init()
+        //{
+        //    LogoIcon.HeightRequest = Constants.LogoIconHeight;
+        //}
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {

@@ -12,7 +12,9 @@
     <StackLayout Padding="20">
         
         <!--<Button Command="{Binding GetGroupsCommand}" Text="Group List"/>-->
-        <ListView ItemsSource="{Binding Groups}"
+        <ListView x:Name="groupsListView"
+                  ItemSelected="GroupsView_OnItemSelected"
+                  ItemsSource="{Binding Groups}"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -20,7 +22,9 @@
                         <StackLayout Padding="0,10">
                             <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}"/>
                             <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
+                            <!--<Image Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Source="{Binding Picture}" />-->
                             
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

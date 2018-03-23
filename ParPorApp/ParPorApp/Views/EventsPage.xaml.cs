@@ -19,7 +19,7 @@ namespace ParPorApp.Views
             InitializeComponent();
 	        
 	        BindingContext = eventsViewModel = new EventsViewModel();
-
+            
             //groupView.ItemsSource = new List<Event>
             //{
             //    new Event{ First = "Coach Ashley O'Toole", ImageUrl = "http://randomuser.me/api/portraits/med/women/85.jpg", PostDate = "09:12AM  03/12/2018", },
@@ -35,7 +35,8 @@ namespace ParPorApp.Views
 		    base.OnAppearing();
 
 		    eventsViewModel.GetEventsCommand.Execute(null);
-	    }
+	        
+        }
 		//private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
   //      {
   //          await Navigation.PushAsync(new LoginPage());
@@ -46,5 +47,6 @@ namespace ParPorApp.Views
 	    {
 			await Navigation.PushAsync(new AddEventPage());
 		}
+
     }
 }
