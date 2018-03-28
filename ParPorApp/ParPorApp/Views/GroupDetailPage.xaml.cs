@@ -33,7 +33,7 @@ namespace ParPorApp.Views
                 new GroupsDetail
                 {
                     Name = "Ashley O'Toole",
-                    ImageUrl = "http://randomuser.me/api/portraits/med/women/32.jpg",
+                    ImageUrl = "http://randomuser.me/api/portraits/med/women/19.jpg",
                     Description = "Team Coach",
                     Phone = "555-555-5555",
                     Email = "aotoole@mail.com"

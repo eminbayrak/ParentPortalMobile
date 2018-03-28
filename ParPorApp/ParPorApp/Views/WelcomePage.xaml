@@ -1,11 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="ParPorApp.Views.WelcomePage"
              IsBusy="{Binding IsBusy}"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False">
-    
+
+    <xfGloss:ContentPageGloss.BackgroundGradient>
+        <xfGloss:Gradient Rotation="150">
+            <xfGloss:GradientStep StepColor="White" StepPercentage="0" />
+            <xfGloss:GradientStep StepColor="White" StepPercentage=".5" />
+            <xfGloss:GradientStep StepColor="#ccd9ff" StepPercentage="1" />
+        </xfGloss:Gradient>
+    </xfGloss:ContentPageGloss.BackgroundGradient>
+
     <ContentPage.Content>
         <Grid RowSpacing="10" ColumnSpacing="10">
             <Grid.RowDefinitions>
@@ -37,12 +46,12 @@
                 <Label Grid.Row="4" 
                        TextColor="Gray"
                        XAlign="Center"
-                       Text="Let's get you login, so you can see what's your team up to."/>
+                       Text="Let's get you login, so you can see what your group is up to."/>
             </StackLayout>
             <Button x:Name="ButtonLogin" 
                     StyleId="ButtonLogin"
                     Grid.Row="5" 
-                    BackgroundColor="#f1836e" 
+                    BackgroundColor="{StaticResource Accent}" 
                     BorderRadius="0" 
                     TextColor="White" 
                     Text="Login to Portal"

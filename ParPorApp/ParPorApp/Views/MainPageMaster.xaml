@@ -4,16 +4,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="ParPorApp.Views.MainPageMaster"
              BackgroundColor="#2c2d37"
              Icon="ic_menu.png"
              Title="Profile">
+
+    <xfGloss:ContentPageGloss.BackgroundGradient>
+        <xfGloss:Gradient Rotation="150">
+            <xfGloss:GradientStep StepColor="{StaticResource PrimaryDark}" StepPercentage="0" />
+            <xfGloss:GradientStep StepColor="{StaticResource PrimaryDark}" StepPercentage=".5" />
+            <xfGloss:GradientStep StepColor="{StaticResource Accent}" StepPercentage="1" />
+        </xfGloss:Gradient>
+    </xfGloss:ContentPageGloss.BackgroundGradient>
+
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
     </ContentPage.BindingContext>
     
     <StackLayout>
-        <Button Clicked="Profile_Clicked" BackgroundColor="Transparent"  VerticalOptions="Start" HorizontalOptions="End" Image="ic_settings.png" />
+        <Button Clicked="Profile_Clicked" BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="End" Image="ic_settings.png" />
+        <abstractions:CircleImage HeightRequest="70"
+                                  HorizontalOptions="Center"
+                                  Source="http://randomuser.me/api/portraits/med/women/19.jpg"
+                                  VerticalOptions="End"
+                                  BorderColor="White"
+                                  BorderThickness="2"
+                                  WidthRequest="70" />
+        <BoxView BackgroundColor="Transparent" HeightRequest="5"/>
+        <StackLayout>
+            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" Text="Ashley O'Toole" />
+            <Label TextColor="White" HorizontalOptions="Center" Text="Team Coach" />
+        </StackLayout>
+        
         <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="None"
                   SeparatorColor="DarkSlateGray"

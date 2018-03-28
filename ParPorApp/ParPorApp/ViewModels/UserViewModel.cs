@@ -17,7 +17,7 @@ namespace ParPorApp.ViewModels
 		private readonly ApiServices _apiServices = new ApiServices();
 	    private User _users;
 
-        public User Users
+	    public User Users
 		{
 			get => _users;
 			set

@@ -57,7 +57,9 @@
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Label Text="Location" FontAttributes="Bold" />
         <Entry Text="{Binding LocationId}" Placeholder="input the location address"/>
-
+        <!--<Button x:Name="takePhoto" Text="Take Photo"/>
+        <Button x:Name="pickPhoto" Text="Pick Photo"/>
+        <Image x:Name="image"/>-->
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Button Command="{Binding AddEventCommand}"
                 Clicked="ReturnEventPage_Clicked"

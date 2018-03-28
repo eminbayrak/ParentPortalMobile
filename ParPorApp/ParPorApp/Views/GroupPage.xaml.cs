@@ -36,7 +36,7 @@ namespace ParPorApp.Views
         {
             using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
             {
-                await Task.Delay(500);
+                await Task.Delay(250);
                 if (e.SelectedItem == null)
                     return;
                 var contact = e.SelectedItem as GroupsDetail;

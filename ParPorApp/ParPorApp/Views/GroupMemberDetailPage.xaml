@@ -3,8 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:views="clr-namespace:ParPorApp.Views;assembly=ParPorApp"
+             xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="ParPorApp.Views.GroupMemberDetailPage"
              Title="{Binding Name}">
+
+    <xfGloss:ContentPageGloss.BackgroundGradient>
+        <xfGloss:Gradient Rotation="150">
+            <xfGloss:GradientStep StepColor="White" StepPercentage="0" />
+            <xfGloss:GradientStep StepColor="White" StepPercentage=".5" />
+            <xfGloss:GradientStep StepColor="#ccd9ff" StepPercentage="1" />
+        </xfGloss:Gradient>
+    </xfGloss:ContentPageGloss.BackgroundGradient>
+
     <ContentPage.BindingContext>
         <views:GroupDetailPage />
     </ContentPage.BindingContext>

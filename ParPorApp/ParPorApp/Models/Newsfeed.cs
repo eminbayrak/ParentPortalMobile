@@ -7,6 +7,7 @@ namespace ParPorApp.Models
 {
     public class Newsfeed
     {
+        public Newsfeed Newsfeeds { get; set; }
         [JsonProperty("Description")] public string Description { get; set; }
 
         [JsonProperty("DistrictId")] public string DistrictId { get; set; }
@@ -40,6 +41,18 @@ namespace ParPorApp.Models
         [JsonProperty("VS")] public string VS { get; set; }
 
         [JsonProperty("Note")] public string Note { get; set; }
+
+        public string LocationHint { get; set; } = string.Empty;
+
+        public string StreetAddress { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
+        public string State { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
+        public string ZipCode { get; set; } = string.Empty;
+        public string Image { get; set; } = string.Empty;
+
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
 }
 

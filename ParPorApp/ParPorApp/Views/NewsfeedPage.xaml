@@ -3,8 +3,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="ParPorApp.Views.NewsfeedPage">
-
+             x:Class="ParPorApp.Views.NewsfeedPage"
+             Title="Newsfeed">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="More" Order="Primary" Icon="ic_more.png" Text="More" Priority="0" />
+    </ContentPage.ToolbarItems>
     <ListView x:Name="newsfeedView"
               HasUnevenRows="True"
               ItemSelected="NewsfeedView_OnItemSelected"
@@ -51,7 +54,13 @@
                                 <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                                     <abstractions:CircleImage Source="{Binding ImageUrl}"
                                                               VerticalOptions="Start" HeightRequest="30"
-                                                              WidthRequest="30" />
+                                                              WidthRequest="30">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="{Binding }"
+                                                NumberOfTapsRequired="2" />
+                                        </Image.GestureRecognizers>-->
+                                    </abstractions:CircleImage>
                                     <Label FontAttributes="None" Grid.Row="0"
                                            HorizontalTextAlignment="Start"
                                            VerticalTextAlignment="Center"

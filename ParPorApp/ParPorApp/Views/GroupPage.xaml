@@ -20,6 +20,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="0,10">
+                            <Image Source="{Binding ImageUrl}"/>
                             <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}"/>
                             <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
                             <!--<Image Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Source="{Binding Picture}" />-->

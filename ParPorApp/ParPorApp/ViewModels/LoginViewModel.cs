@@ -27,7 +27,7 @@ namespace ParPorApp.ViewModels
 	                
                     if (!string.IsNullOrEmpty(accesstoken))
                     {
-	                    using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
+	                    using (UserDialogs.Instance.Loading("Logging...", null, null, true, MaskType.Black))
 	                    {
 		                    await Task.Delay(2000);
 		                    Settings.Username = Username;

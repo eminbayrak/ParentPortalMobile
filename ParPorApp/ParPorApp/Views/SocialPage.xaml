@@ -4,8 +4,7 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:xamarinForms="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
             x:Class="ParPorApp.Views.SocialPage"
-            Icon="hamburger.png"
-            Title="Newsfeed">
+            Icon="hamburger.png">
 
     <!--<ContentPage xamarinForms:BottomBarPageExtensions.TabColor="#cfefa7"/>-->
     <xamarinForms:BottomBarPage.BarTextColor>Black</xamarinForms:BottomBarPage.BarTextColor>

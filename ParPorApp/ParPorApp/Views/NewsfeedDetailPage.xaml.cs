@@ -34,5 +34,10 @@ namespace ParPorApp.Views
 				Title = "GAME"
 			});
 		}
+
+        private async Task Weather_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new WeatherWebPage());
+        }
     }
 }

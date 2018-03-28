@@ -25,17 +25,17 @@
 
     <!-- colorPrimary is used for the default action bar background -->
 
-    <item name="colorPrimary">#a9287a</item>
+    <item name="colorPrimary">#8d73b6</item>
 
     <!-- colorPrimaryDark is used for the status bar -->
 
-    <item name="colorPrimaryDark">#a12674</item>
+    <item name="colorPrimaryDark">#5e4786</item>
 
     <!-- colorAccent is used as the default value for colorControlActivated
 
          which is used to tint widgets -->
 
-    <item name="colorAccent">#a9287a</item>
+    <item name="colorAccent">#8d73b6</item>
     <item name="android:textAllCaps">false</item>
 
     <!-- You can also set colorControlNormal, colorControlActivated
@@ -55,7 +55,7 @@
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
 
-    <item name="colorAccent">#a9287a</item>
+    <item name="colorAccent">#8d73b6</item>
 
   </style>
   <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">

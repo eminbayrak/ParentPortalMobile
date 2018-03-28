@@ -103,6 +103,7 @@ namespace ParPorApp.Services
 
             var group = JsonConvert.DeserializeObject<List<Group>>(json);
 
+
             return group;
         }
 
@@ -115,21 +116,14 @@ namespace ParPorApp.Services
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
 			    "Bearer", accessToken);
 
-		    var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
+		    var json = await client.GetAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
+	        string userJson = await json.Content.ReadAsStringAsync();
 
-			var user = JsonConvert.DeserializeObject<User>(json);
-	        //foreach (var dict in user)
-	        //{
-	        //    foreach (var kvp in dict)
-	        //    {
-	        //        Console.WriteLine(kvp.Key + ": " + kvp.Value);
-	        //    }
-	        //    Console.WriteLine();
-	        //}
-            Debug.Write(json);
+			var user = JsonConvert.DeserializeObject<User>(userJson);
+	        
+            Debug.Write(userJson);
 	        return user;
-
-            
+          
 	    }
 
 		// get events list
@@ -145,7 +139,7 @@ namespace ParPorApp.Services
 
             return events;
         }
-
+        
 		// Put event
 	    public async Task PutEventAsync(Event events, string accessToken)
 	    {
@@ -180,7 +174,7 @@ namespace ParPorApp.Services
 			}
 		    else
 		    {
-				await UserDialogs.Instance.AlertAsync(string.Format("Uh oh, something went wrong :("));
+				await UserDialogs.Instance.AlertAsync(string.Format("Uh oh :(", "something went wrong", "Try again"));
 			    Debug.Write(response);
 			}
 			
