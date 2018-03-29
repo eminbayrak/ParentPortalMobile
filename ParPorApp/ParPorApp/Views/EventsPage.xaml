@@ -46,7 +46,7 @@
                             <OnPlatform x:TypeArguments="Thickness"
                                         Android="5" iOS="7" />
                         </Frame.Padding>
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" Padding="10">
 
                             <Grid VerticalOptions="CenterAndExpand"
                                   Padding="0"
@@ -59,8 +59,12 @@
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
 
-                                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                                <!--<StackLayout Orientation="Horizontal" VerticalOptions="Start">
                                     <abstractions:CircleImage Source="{Binding ImageUrl}"
                                                               VerticalOptions="Start" HeightRequest="30"
                                                               WidthRequest="30" />
@@ -74,29 +78,57 @@
                                            VerticalTextAlignment="Center"
                                            FontSize="12"
                                            Text="{Binding PostDate}" TextColor="Gray" />
-                                </StackLayout>
+                                </StackLayout>-->
 
-                                <Grid Grid.Row="1" Padding="10">
+                                <Grid Grid.Row="0">
 
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding  Name}"
-                                               FontSize="20"
-                                               Grid.Row="2"
+                                               Style="{StaticResource ProfileNameLabel}"
                                                HorizontalOptions="Start" VerticalOptions="Start"/>
 
                                     </StackLayout>
                                 </Grid>
-                                <Grid Grid.Row="2" Padding="10">
+                                <Grid Grid.Row="1">
 
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding  Description}"
-                                               FontSize="16"
-                                               Grid.Row="2"
+                                               Style="{StaticResource ProfileTagLabel}"
+                                               HorizontalOptions="Start" VerticalOptions="Start"/>
+                                    </StackLayout>
+                                </Grid>
+                                <Grid Grid.Row="2" Grid.Column="0">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Start Date"
+                                               Style="{StaticResource ProfileTagLabel}"
+                                               HorizontalOptions="Start" VerticalOptions="Start"/>
+                                    </StackLayout>
+                                </Grid>
+                                <Grid Grid.Row="3" Grid.Column="0">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding  StartDateTime, StringFormat='{0:h:mm tt}'}"
+                                               Font="Bold, 20"
+                                               HorizontalOptions="Start" VerticalOptions="Start"/>
+                                    </StackLayout>
+                                </Grid>
+                                <Grid Grid.Row="2" Grid.Column="1">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="End Date"
+                                               Style="{StaticResource ProfileTagLabel}"
                                                HorizontalOptions="Start" VerticalOptions="Start"/>
                                     </StackLayout>
                                 </Grid>
 
-                                <Grid Grid.Row="3" BackgroundColor="Transparent" Padding="5">
+                                <Grid Grid.Row="3" Grid.Column="1">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding EndDateTime, StringFormat='{}{0:hh\\:mm}'}"></Label>
+                                    </StackLayout>
+                                </Grid>
+
+                                <!--<Grid Grid.Row="3" BackgroundColor="Transparent" Padding="5">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
@@ -106,7 +138,7 @@
 
                                     <Image Grid.Row="0" Grid.Column="0" HeightRequest="200" Source="{Binding GameIcon}"
                                            Aspect="AspectFill" />
-                                </Grid>
+                                </Grid>-->
 
 
                             </Grid>

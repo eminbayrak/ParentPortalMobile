@@ -25,10 +25,11 @@
                             BorderColor="#C0C0C0"
                             BorderThickness="2"
                             Aspect="AspectFill"/>
-                        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                        <StackLayout VerticalOptions="Center">
                             <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
                             <Label Text="{Binding Description}"/>
                         </StackLayout>
+                        <Image Source="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" Opacity="0.5"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

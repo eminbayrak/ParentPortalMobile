@@ -46,7 +46,7 @@
             <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_StartDateSelected" Grid.Column="0" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
             <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_FinishDateSelected" Grid.Column="1" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
 
-            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay, StringFormat=''}" />
+            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay}" />
             <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime, Mode=TwoWay}" />
         </Grid>
 
@@ -57,9 +57,7 @@
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Label Text="Location" FontAttributes="Bold" />
         <Entry Text="{Binding LocationId}" Placeholder="input the location address"/>
-        <!--<Button x:Name="takePhoto" Text="Take Photo"/>
-        <Button x:Name="pickPhoto" Text="Pick Photo"/>
-        <Image x:Name="image"/>-->
+
         <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Button Command="{Binding AddEventCommand}"
                 Clicked="ReturnEventPage_Clicked"

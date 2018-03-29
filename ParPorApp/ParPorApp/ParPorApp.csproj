@@ -18,6 +18,7 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="Ansuria.XFGloss" Version="1.1.2.89" />
+    <PackageReference Include="Com.OneSignal" Version="3.0.1" />
     <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
     <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.2" />
     <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />

@@ -24,6 +24,7 @@ namespace ParPorApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
                 // Ask the user for permission to get notifications on iOS 10.0+

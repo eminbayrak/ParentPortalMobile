@@ -194,6 +194,9 @@
     <PackageReference Include="Ansuria.XFGloss">
       <Version>1.1.2.89</Version>
     </PackageReference>
+    <PackageReference Include="Com.OneSignal">
+      <Version>3.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Azure.Mobile.Client">
       <Version>4.0.2</Version>
     </PackageReference>

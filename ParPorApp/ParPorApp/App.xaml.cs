@@ -3,6 +3,7 @@ using ParPorApp.Helpers;
 using ParPorApp.ViewModels;
 using Xamarin.Forms;
 using System;
+using Com.OneSignal;
 
 namespace ParPorApp
 {
@@ -11,10 +12,10 @@ namespace ParPorApp
         public App()
         {
             InitializeComponent();
-            
-
             SetMainPage();
-            
+            OneSignal.Current.StartInit("9fde7b73-f47b-459e-aae9-39756cccebf1")
+                .EndInit();
+
 
         }
 

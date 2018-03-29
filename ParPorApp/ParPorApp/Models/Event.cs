@@ -35,6 +35,6 @@ namespace ParPorApp.Models
         public string ImageUrl { get; set; }
 
         [JsonProperty("PostDate")]
-        public string PostDate { get; set; }
+        public string PostedOnDateTime { get; set; }
     }
 }
