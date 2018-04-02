@@ -10,13 +10,7 @@
              Icon="ic_menu.png"
              Title="Profile">
 
-    <xfGloss:ContentPageGloss.BackgroundGradient>
-        <xfGloss:Gradient Rotation="350">
-            <xfGloss:GradientStep StepColor="{StaticResource PrimaryDark}" StepPercentage="0" />
-            <xfGloss:GradientStep StepColor="{StaticResource PrimaryDark}" StepPercentage=".5" />
-            <xfGloss:GradientStep StepColor="{StaticResource Accent}" StepPercentage="1" />
-        </xfGloss:Gradient>
-    </xfGloss:ContentPageGloss.BackgroundGradient>
+   
 
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />

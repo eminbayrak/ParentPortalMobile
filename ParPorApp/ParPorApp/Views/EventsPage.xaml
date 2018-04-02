@@ -108,8 +108,8 @@
                                 <Grid Grid.Row="3" Grid.Column="0">
 
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding  StartDateTime, StringFormat='{0:h:mm tt}'}"
-                                               Font="Bold, 20"
+                                        <Label Text="{Binding  StartDateTime, StringFormat='Start Time \{0:ddd, MMM d \\a\\t h:mm tt\}'}"
+                                               Font="Bold, 16"
                                                HorizontalOptions="Start" VerticalOptions="Start"/>
                                     </StackLayout>
                                 </Grid>
@@ -124,7 +124,7 @@
 
                                 <Grid Grid.Row="3" Grid.Column="1">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding EndDateTime, StringFormat='{}{0:hh\\:mm}'}"></Label>
+                                        <Label Text="{Binding EndDateTime, StringFormat='{}{0:hh\\:mm}'}" Font="Bold, 16"/>
                                     </StackLayout>
                                 </Grid>
 

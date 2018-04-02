@@ -3,36 +3,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="ParPorApp.Views.GroupDetailPage"
-             Title="Group Members">
+             Title="Team Detail">
 
-    <ListView x:Name="groupsDetailView" 
+
+    <ListView x:Name="groupdetailView"
               HasUnevenRows="True"
-              SeparatorVisibility = "Default"
-              ItemSelected="GroupsMemberView_OnItemSelected"
-              ItemsSource="{Binding GroupsItems}"
+              ItemsSource="{Binding Items}"
+              SeparatorVisibility="None"
               CachingStrategy="RecycleElement">
 
-        <!--Built in Cells-->
+
         <ListView.ItemTemplate>
+
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal" Padding="20">
-                        <abstractions:CircleImage
-                            Source="{Binding ImageUrl}"
-                            WidthRequest="55"
-                            HeightRequest="55"
-                            BorderColor="#C0C0C0"
-                            BorderThickness="2"
-                            Aspect="AspectFill"/>
-                        <StackLayout VerticalOptions="Center">
-                            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
-                            <Label Text="{Binding Description}"/>
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO" />
+                            <RowDefinition Height="AUTO" />
+                            <RowDefinition Height="AUTO" />
+                        </Grid.RowDefinitions>
+
+
+                        <abstractions:CircleImage Grid.Row="0"
+                                                  HeightRequest="120"
+                                                  HorizontalOptions="Center"
+                                                  Source="princeton.png"
+
+                                                  TranslationY="40"
+                                                  VerticalOptions="End"
+
+                                                  WidthRequest="120" />
+
+
+                        <StackLayout Grid.Row="1" Padding="0,50,0,00" HorizontalOptions="Center">
+                            <Label Margin="0,-1" Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}" />
+                            <Label Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
+                            <BoxView BackgroundColor="Transparent" HeightRequest="20"/>
+                            <Image Source="socialmedia.png" HeightRequest="40" WidthRequest="220" />
+                            <BoxView BackgroundColor="Transparent" HeightRequest="20"/>
+                            <Label Text="100 Viking Way, Cincinnati, OH 45246" FontSize="Large" />
+                            <Button Text="www.princetonschools.net" BackgroundColor="Transparent" TextColor="Blue" Clicked="WebsiteButton_OnClicked"
+                                    FontSize="Large" />
                         </StackLayout>
-                        <Image Source="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" Opacity="0.5"/>
-                    </StackLayout>
+                        
+
+                        <!--<BoxView Grid.Row="0" HeightRequest="120" VerticalOptions="Center" BackgroundColor="White" Opacity="0.9"></BoxView>-->
+                    </Grid>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+
 </ContentPage>

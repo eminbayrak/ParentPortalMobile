@@ -36,11 +36,11 @@ namespace ParPorApp.Views
         {
             using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
             {
-                await Task.Delay(250);
+                await Task.Delay(200);
                 if (e.SelectedItem == null)
                     return;
-                var contact = e.SelectedItem as GroupsDetail;
-                await Navigation.PushAsync(new GroupDetailPage());
+                var contact = e.SelectedItem as MembersDetail;
+                await Navigation.PushAsync(new GroupTabbedPage());
                 groupsListView.SelectedItem = null;
             }
                 

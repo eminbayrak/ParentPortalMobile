@@ -22,8 +22,8 @@ namespace ParPorApp.Models
         [JsonProperty("UserId")]
         public string UserId { get; set; }
 
-        [JsonProperty("ImageUrl")]
-        public string ImageUrl { get; set; }
+        [JsonProperty("Picture")]
+        public string Picture { get; set; }
 
         [JsonProperty("gameIcon")]
         public string gameIcon { get; set; }
@@ -34,7 +34,7 @@ namespace ParPorApp.Models
         public ICollection<AccountGroup> AccountGroups { get; set; }
         public ICollection<GroupEvent> GroupEvents { get; set; }
         public ICollection<GroupStudent> GroupStudents { get; set; }
-        public string Picture { get; set; }
+        
     }
 
 }

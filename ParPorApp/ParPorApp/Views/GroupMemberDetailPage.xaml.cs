@@ -12,7 +12,7 @@ namespace ParPorApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GroupMemberDetailPage : ContentPage
 	{
-		public GroupMemberDetailPage (GroupsDetail memberDetail)
+		public GroupMemberDetailPage (MembersDetail memberDetail)
 		{
 			InitializeComponent ();
 		    BindingContext = memberDetail ?? throw new ArgumentNullException();

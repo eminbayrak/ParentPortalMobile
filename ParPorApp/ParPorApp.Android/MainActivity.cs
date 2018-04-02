@@ -2,6 +2,7 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using FFImageLoading.Forms.Droid;
 using IconEntry.FormsPlugin.Android;
 using Microsoft.WindowsAzure.MobileServices;
 using Plugin.LocalNotifications;
@@ -18,7 +19,7 @@ namespace ParPorApp.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-			UserDialogs.Init(this);
+            UserDialogs.Init(this);
 			base.OnCreate(bundle);
             //Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             Forms.Init(this, bundle);
