@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ParPorApp.Views.GroupPage"
              Title="Group">
 
@@ -21,7 +22,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="10">
-                            <abstractions:CircleImage
+                            <forms:CachedImage
                                 Source="{Binding Picture}"
                                 WidthRequest="60"
                                 HeightRequest="60"
@@ -30,7 +31,7 @@
                                 <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
                                 <Label Text="{Binding Description}"/>
                             </StackLayout>
-                            <Image Source="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" Opacity="0.5"/>
+                            <forms:CachedImage Source="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" Opacity="0.5"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

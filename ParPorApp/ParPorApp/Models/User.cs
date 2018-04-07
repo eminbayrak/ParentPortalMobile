@@ -19,5 +19,11 @@ namespace ParPorApp.Models
         [JsonProperty("HasRegistered")] public bool HasRegistered { get; set; }
 
         [JsonProperty("LoginProvider")] public string LoginProvider { get; set; }
+
+        [JsonProperty("Avatar")] public string Avatar { get; set; }
+        public string FullName
+        {
+            get { return this.FirstName + " " + this.LastName; }
+        }
     }
 }

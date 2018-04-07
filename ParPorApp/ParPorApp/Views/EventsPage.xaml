@@ -108,7 +108,7 @@
                                 <Grid Grid.Row="3" Grid.Column="0">
 
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding  StartDateTime, StringFormat='Start Time \{0:ddd, MMM d \\a\\t h:mm tt\}'}"
+                                        <Label Text="{Binding  StartDateTime, StringFormat='\{0:ddd, MMM d \\a\\t h:mm tt\}'}"
                                                Font="Bold, 16"
                                                HorizontalOptions="Start" VerticalOptions="Start"/>
                                     </StackLayout>

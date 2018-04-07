@@ -33,7 +33,7 @@ namespace ParPorApp.ViewModels
 		                    Settings.Username = Username;
 		                    Settings.Password = Password;
 		                    Settings.AccessToken = accesstoken;
-		                    await Application.Current.MainPage.Navigation.PushAsync(new MainPage(), true);
+		                    await Application.Current.MainPage.Navigation.PushAsync(new SocialPage(), true);
 						}
 						//IsBusy = true;
 	                    

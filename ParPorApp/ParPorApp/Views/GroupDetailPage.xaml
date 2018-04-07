@@ -44,7 +44,8 @@
                             <BoxView BackgroundColor="Transparent" HeightRequest="20"/>
                             <Image Source="socialmedia.png" HeightRequest="40" WidthRequest="220" />
                             <BoxView BackgroundColor="Transparent" HeightRequest="20"/>
-                            <Label Text="100 Viking Way, Cincinnati, OH 45246" FontSize="Large" />
+                            <Label Text="100 Viking Way, Cincinnati, OH 45246" FontSize="Medium"/>
+                            <Label Text="(513) 864-1500"/>
                             <Button Text="www.princetonschools.net" BackgroundColor="Transparent" TextColor="Blue" Clicked="WebsiteButton_OnClicked"
                                     FontSize="Large" />
                         </StackLayout>

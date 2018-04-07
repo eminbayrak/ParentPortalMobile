@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Touch;
 using Foundation;
 using UIKit;
 using UserNotifications;
@@ -53,7 +53,7 @@ namespace ParPorApp.iOS
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(255, 20, 153);
             UINavigationBar.Appearance.TintColor = UIColor.White;
             return base.FinishedLaunching(app, options);
-
+            CachedImageRenderer.Init();
 
         }
     }

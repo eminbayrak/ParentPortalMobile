@@ -7,7 +7,7 @@
             Icon="hamburger.png">
 
     <!--<ContentPage xamarinForms:BottomBarPageExtensions.TabColor="#cfefa7"/>-->
-    <xamarinForms:BottomBarPage.BarTextColor>Black</xamarinForms:BottomBarPage.BarTextColor>
+    <xamarinForms:BottomBarPage.BarTextColor>WhiteSmoke</xamarinForms:BottomBarPage.BarTextColor>
     
     
 </xamarinForms:BottomBarPage>

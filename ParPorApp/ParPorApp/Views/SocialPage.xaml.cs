@@ -16,10 +16,12 @@ namespace ParPorApp.Views
         {
             InitializeComponent();
             
-            Children.Add(new NewsfeedPage() { Title="Newsfeed", Icon = "ic_grade_18.png" });
-            Children.Add(new GamesPage() { Title = "Games", Icon="ic_games.png"});
-            Children.Add(new PlacesPage() { Title = "Places", Icon = "ic_place.png"});
-            
+            Children.Add(new NewsfeedPage() { Title="Newsfeed", Icon = "ic_home.png" });
+            Children.Add(new GroupPage() { Title="Social", Icon="ic_chat.png"});
+            Children.Add(new EventsPage() { Title = "Events", Icon = "ic_event_black.png"});
+            Children.Add(new UserProfilePage() { Title = "Profile", Icon = "ic_face.png"});
+
+            //NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

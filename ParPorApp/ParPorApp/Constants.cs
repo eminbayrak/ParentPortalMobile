@@ -6,13 +6,13 @@
         //public static string BaseApiAddress => "http://parentportalapi.azurewebsites.net/";
 
         //Home
-        //public static string BaseApiAddress => "http://192.168.43.176:5000/";
+        public static string BaseApiAddress => "http://192.168.29.110:5000/";
 
         //Work
-        public static string BaseApiAddress => "http://10.65.234.86:5000/";
+        //public static string BaseApiAddress => "http://10.65.234.209:5000/";
 
         //schools
-        //public static string BaseApiAddress => "http://10.132.253.66:5000/";
+        //public static string BaseApiAddress => "http://10.132.248.126:5000/";
 
 		//Localhost
 	    //public static string BaseApiAddress => "http://localhost:55601/";

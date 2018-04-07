@@ -3,7 +3,7 @@ using ParPorApp.Helpers;
 using ParPorApp.ViewModels;
 using Xamarin.Forms;
 using System;
-using Com.OneSignal;
+//using Com.OneSignal;
 
 namespace ParPorApp
 {
@@ -13,8 +13,7 @@ namespace ParPorApp
         {
             InitializeComponent();
             SetMainPage();
-            OneSignal.Current.StartInit("9fde7b73-f47b-459e-aae9-39756cccebf1")
-                .EndInit();
+            //OneSignal.Current.StartInit("9fde7b73-f47b-459e-aae9-39756cccebf1").EndInit();
 
 
         }
@@ -28,7 +27,7 @@ namespace ParPorApp
                     var loginViewModel = new LoginViewModel();
                     loginViewModel.LoginCommand.Execute(null);
                 }
-                MainPage = new NavigationPage(new MainPage()){
+                MainPage = new NavigationPage(new SocialPage()){
                 };
             }
             else if (!string.IsNullOrEmpty(Settings.Username)

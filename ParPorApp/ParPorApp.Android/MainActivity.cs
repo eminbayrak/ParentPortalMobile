@@ -27,7 +27,7 @@ namespace ParPorApp.Droid
             LoadApplication(new App());
             IconEntryRenderer.Init();
             LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.ic_logo;
-
+            CachedImageRenderer.Init(enableFastRenderer: true);
         }
     }
 }

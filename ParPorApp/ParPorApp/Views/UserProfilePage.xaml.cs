@@ -18,7 +18,8 @@ namespace ParPorApp.Views
 		{
 			InitializeComponent ();
 			BindingContext = usersViewModel = new UserViewModel();
-		}
+		    NavigationPage.SetHasNavigationBar(this, false);
+        }
 
 		protected override void OnAppearing()
 		{
@@ -26,5 +27,20 @@ namespace ParPorApp.Views
 
 			usersViewModel.GetUserCommand.Execute(null);
 		}
-	}
+
+	    private async void gotoGroupPage_clicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushModalAsync(new GroupDetailPage());
+	    }
+
+	    private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
+	    {
+
+	        await Navigation.PushAsync(new LoginPage());
+	    }
+	    private async Task Profile_Clicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushModalAsync(new ProfilePage());
+	    }
+    }
 }

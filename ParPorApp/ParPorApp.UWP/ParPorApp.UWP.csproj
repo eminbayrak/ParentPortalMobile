@@ -101,6 +101,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\Fonts\fontawesome-webfont.ttf" />
     <None Include="ParPorApp.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,7 @@
     <Content Include="football.png" />
     <BundleResource Include="milford.png" />
     <BundleResource Include="princeton.png" />
+    <AndroidResource Include="ic_logo.png" />
     <Content Include="soccer.png" />
     <Content Include="Assets\Square310x310Logo.scale-100.png" />
     <Content Include="Assets\Square310x310Logo.scale-125.png" />
@@ -192,10 +194,7 @@
       <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="Ansuria.XFGloss">
-      <Version>1.1.2.89</Version>
-    </PackageReference>
-    <PackageReference Include="Com.OneSignal">
-      <Version>3.0.1</Version>
+      <Version>1.1.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.Mobile.Client">
       <Version>4.0.2</Version>
@@ -207,7 +206,7 @@
       <Version>1.0.168</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Build.Framework">
-      <Version>15.6.82</Version>
+      <Version>15.6.85</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp">
       <Version>4.4.1</Version>
@@ -296,7 +295,7 @@
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
       <Version>2.3.6</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.1.340284-pre2" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.8" />
   </ItemGroup>
   <ItemGroup>

@@ -108,7 +108,7 @@ namespace ParPorApp.Services
         }
 
 		//Get user list
-	    public async Task<User> GetUsersAsync(string accessToken)
+	    public async Task<List<User>> GetUsersAsync(string accessToken)
 	    {
 		    var client = new HttpClient();
 	        client.MaxResponseContentBufferSize = 256000;
@@ -119,7 +119,7 @@ namespace ParPorApp.Services
 		    var json = await client.GetAsync(Constants.BaseApiAddress + "api/Account/UserInfo");
 	        string userJson = await json.Content.ReadAsStringAsync();
 
-			var user = JsonConvert.DeserializeObject<User>(userJson);
+			var user = JsonConvert.DeserializeObject<List<User>>(userJson);
 	        
             Debug.Write(userJson);
 	        return user;

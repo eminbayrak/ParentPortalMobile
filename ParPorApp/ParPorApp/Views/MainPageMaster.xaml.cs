@@ -20,7 +20,7 @@ namespace ParPorApp.Views
 			ListView = MenuItemsListView;
 		}
 
-		class MainPageMasterViewModel : INotifyPropertyChanged
+	    public class MainPageMasterViewModel : INotifyPropertyChanged
 		{
 			public ObservableCollection<MainPageMenuItem> MenuItems { get; set; }
 

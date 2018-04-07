@@ -15,9 +15,9 @@ namespace ParPorApp.ViewModels
 	public sealed class UserViewModel : INotifyPropertyChanged
 	{
 		private readonly ApiServices _apiServices = new ApiServices();
-	    private User _users;
+	    private List<User> _users;
 
-	    public User Users
+	    public List<User> Users
 		{
 			get => _users;
 			set
@@ -26,6 +26,7 @@ namespace ParPorApp.ViewModels
 				OnPropertyChanged();
 			}
 		}
+
 
 		public ICommand GetUserCommand
 		{
@@ -38,8 +39,9 @@ namespace ParPorApp.ViewModels
 				});
 			}
 		}
+        
 
-		public event PropertyChangedEventHandler PropertyChanged;
+	    public event PropertyChangedEventHandler PropertyChanged;
 
 	    private void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{

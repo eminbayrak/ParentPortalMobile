@@ -1,31 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
-
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
+             BackgroundColor="#21252b"
+             
              x:Class="ParPorApp.Views.UserProfilePage">
 
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="20">
-
-
+    <StackLayout BackgroundColor="#21252b">
+        <Button Clicked="Profile_Clicked" BackgroundColor="Transparent" VerticalOptions="Start"
+                HorizontalOptions="End" Image="ic_settings.png" />
         <ListView ItemsSource="{Binding Users}"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="0,10">
-                            <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Email}" />
-                            <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="{Binding FirstName}" />
-
+                        <StackLayout>
+                            <StackLayout>
+                                <Grid BackgroundColor="Transparent">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid>
+                                       
+                                        <!--<Image Source="bg.png" Aspect="AspectFill" />-->
+                                        
+                                        <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                            <abstractions:CircleImage BorderColor="White" BorderThickness="1" Source="{Binding Avatar}" WidthRequest="85" HeightRequest="85" />
+                                            <Label Text="{Binding FullName}" TextColor="White" FontSize="Large" />
+                                            <Label Text="{Binding Email}" HorizontalOptions="Center" TextColor="White" FontSize="Medium" />
+                                        </StackLayout>
+                                    </Grid>
+                                  </Grid>  
+                            </StackLayout>
+                            <ContentView HeightRequest="20" />
+                            <StackLayout Padding="10">
+                                <Button Text="Messages" TextColor="White" Image="ic_message.png" HorizontalOptions="Start"
+                                        BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
+                                <ContentView HeightRequest="1" BackgroundColor="#333843" />
+                                <Button Text="People" TextColor="White" Image="ic_groups.png" HorizontalOptions="Start"
+                                        BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
+                                <ContentView HeightRequest="1" BackgroundColor="#333843" />
+                                <Button Text="Notifications" TextColor="White" Image="ic_notifications.png" HorizontalOptions="Start"
+                                        BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
+                                <ContentView HeightRequest="1" BackgroundColor="#333843" />
+                                
+                            </StackLayout>
+                            
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="Feedback" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Start" Image="feedback.png"/>
+        <Button Image="ic_exit.png"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent"
+                BorderColor="Black"
+                Text="Signout"
+                CornerRadius="0"
+                TextColor="White"
+                FontAttributes="Bold"
+                Command="{Binding LogoutCommand}"
+                Clicked="LogoutMenuItem_Clicked"
+                VerticalOptions="End" />
     </StackLayout>
     
 </ContentPage>
