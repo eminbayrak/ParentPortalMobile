@@ -4,6 +4,7 @@
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:views="clr-namespace:ParPorApp.Views;assembly=ParPorApp"
              xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ParPorApp.Views.GroupMemberDetailPage"
              Title="{Binding Name}">
 
@@ -29,7 +30,7 @@
             </Grid.RowDefinitions>
 
               <!--header background-->  
-            <Image Source="soccer.png" Aspect="AspectFill"/>
+            <forms:CachedImage Source="soccer.png" Aspect="AspectFill"/>
 
 
             <!--  profile image  -->
@@ -39,8 +40,8 @@
                    Source="{Binding ImageUrl}" 
                    TranslationY="40" 
                    VerticalOptions="End"
-                   BorderColor="White"
-                   BorderThickness="2"
+                   BorderColor="DimGray"
+                   BorderThickness="1"
                    WidthRequest="80"/>
 
             <!--  Info Section  -->

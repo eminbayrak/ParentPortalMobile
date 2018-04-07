@@ -5,64 +5,78 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
-             BackgroundColor="#21252b"
-             
+             Title="{Binding Profile}"
              x:Class="ParPorApp.Views.UserProfilePage">
 
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sign out"
+                     Command="{Binding LogoutCommand}"
+                     Clicked="LogoutMenuItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <xfGloss:ContentPageGloss.BackgroundGradient>
+        <xfGloss:Gradient Rotation="170">
+            <xfGloss:GradientStep StepColor="#9b7fc8" StepPercentage="0" />
+            <xfGloss:GradientStep StepColor="#282929" StepPercentage="0.4" />
+            <xfGloss:GradientStep StepColor="#282929" StepPercentage="1" />
+        </xfGloss:Gradient>
+    </xfGloss:ContentPageGloss.BackgroundGradient>
+    <StackLayout>
 
-    <StackLayout BackgroundColor="#21252b">
-        <Button Clicked="Profile_Clicked" BackgroundColor="Transparent" VerticalOptions="Start"
-                HorizontalOptions="End" Image="ic_settings.png" />
         <ListView ItemsSource="{Binding Users}"
+                  IsEnabled="False"
+                  Margin="0,20"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <StackLayout>
-                                <Grid BackgroundColor="Transparent">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid>
-                                       
-                                        <!--<Image Source="bg.png" Aspect="AspectFill" />-->
-                                        
-                                        <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                            <abstractions:CircleImage BorderColor="White" BorderThickness="1" Source="{Binding Avatar}" WidthRequest="85" HeightRequest="85" />
-                                            <Label Text="{Binding FullName}" TextColor="White" FontSize="Large" />
-                                            <Label Text="{Binding Email}" HorizontalOptions="Center" TextColor="White" FontSize="Medium" />
-                                        </StackLayout>
-                                    </Grid>
-                                  </Grid>  
-                            </StackLayout>
-                            <ContentView HeightRequest="20" />
-                            <StackLayout Padding="10">
-                                <Button Text="Messages" TextColor="White" Image="ic_message.png" HorizontalOptions="Start"
-                                        BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
-                                <ContentView HeightRequest="1" BackgroundColor="#333843" />
-                                <Button Text="People" TextColor="White" Image="ic_groups.png" HorizontalOptions="Start"
-                                        BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
-                                <ContentView HeightRequest="1" BackgroundColor="#333843" />
-                                <Button Text="Notifications" TextColor="White" Image="ic_notifications.png" HorizontalOptions="Start"
-                                        BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
-                                <ContentView HeightRequest="1" BackgroundColor="#333843" />
-                                
-                            </StackLayout>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <abstractions:CircleImage BorderColor="White" BorderThickness="1" Source="{Binding Avatar}"
+                                                      WidthRequest="75" HeightRequest="75" />
+                            <Label Text="{Binding FullName}" TextColor="White" FontSize="Large" />
+                            <Label Text="{Binding Email}" HorizontalOptions="Center" TextColor="White"
+                                   FontSize="Medium" />
+                        </StackLayout>
+                        <StackLayout >
+                          
+                            <abstractions:CircleImage HeightRequest="80"
+                                                      HorizontalOptions="Center"
+                                                      Source="{Binding Avatar}"
+                                                      VerticalOptions="End"
+                                                      BorderColor="DimGray"
+                                                      BorderThickness="2"
+                                                      WidthRequest="80" />
                             
+                            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" Text="{Binding FullName}" />
+                            <Label TextColor="White" HorizontalOptions="Center" Text="{Binding Email}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Feedback" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Start" Image="feedback.png"/>
-        <Button Image="ic_exit.png"
+        
+        <StackLayout Margin="20,80" Opacity="0.8" BackgroundColor="Transparent">
+            <Button Text="Messages" TextColor="White" Image="ic_message.png" HorizontalOptions="Start"
+                    BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
+            
+            <Button Text="People" TextColor="White" Image="ic_groups.png" HorizontalOptions="Start"
+                    BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
+           
+            <Button Text="Notifications" TextColor="White" Image="ic_notifications.png" HorizontalOptions="Start"
+                    BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
+            
+            <Button Clicked="Profile_Clicked" Text="Settings" TextColor="White" BackgroundColor="Transparent"
+                    HorizontalOptions="Start" Image="ic_settings.png" />
+            <Button Text="Feedback" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Start"
+                    Image="ic_feedback.png" />
+        </StackLayout>
+       
+        <!--<Button Image="ic_exit.png"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="Transparent"
+                BackgroundColor="#e0227c"
+
                 BorderColor="Black"
                 Text="Signout"
                 CornerRadius="0"
@@ -70,7 +84,7 @@
                 FontAttributes="Bold"
                 Command="{Binding LogoutCommand}"
                 Clicked="LogoutMenuItem_Clicked"
-                VerticalOptions="End" />
+                VerticalOptions="End" />-->
     </StackLayout>
-    
+
 </ContentPage>

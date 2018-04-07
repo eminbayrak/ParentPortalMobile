@@ -586,4 +586,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_face_3x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_feedback_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_feedback_3x.png" />
+  </ItemGroup>
 </Project>
