@@ -17,7 +17,7 @@
                 <views:NewsfeedPage/>
             </x:Arguments>
             </NavigationPage>
-        <NavigationPage Title="Event" Icon="ic_event_black.png" xamarinForms:BottomBarPageExtensions.TabColor="OrangeRed">
+        <NavigationPage Title="Events" Icon="ic_event_black.png" xamarinForms:BottomBarPageExtensions.TabColor="OrangeRed">
             
             <x:Arguments>
                 <views:EventsPage />
@@ -29,7 +29,7 @@
                 <views:GroupPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Social Feed" Icon="ic_event.png" xamarinForms:BottomBarPageExtensions.TabColor="DodgerBlue">
+        <NavigationPage Title="Social Feeds" Icon="ic_event.png" xamarinForms:BottomBarPageExtensions.TabColor="DodgerBlue">
             <x:Arguments>
                 <views:FABPage />
             </x:Arguments>

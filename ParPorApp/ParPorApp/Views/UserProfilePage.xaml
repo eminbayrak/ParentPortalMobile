@@ -5,60 +5,112 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:constant="clr-namespace:ParPorApp.Constant;assembly=ParPorApp"
              Title="Profile"
              x:Class="ParPorApp.Views.UserProfilePage">
 
     <ContentPage.BindingContext>
         <viewModels:UserViewModel />
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="AwesomeFont">
+                <On Platform="Android" Value="fontawesome.ttf#FontAwesome" />
+                <On Platform="UWP" Value="/Assets/fontawesome.ttf#FontAwesome" />
+                <On Platform="iOS" Value="FontAwesome" />
+            </OnPlatform>
+            <Style x:Key="FontAwesomeTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Opacity" Value="0.80" />
+            </Style>
+            <Style x:Key="FontAwesomeStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Opacity" Value="0.60" />
+                
+            </Style>
+            <Style x:Key="FontAwesomeStyleBtn" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Sign out"
-                     Command="{Binding LogoutCommand}"
-                     Clicked="LogoutMenuItem_Clicked"/>
+        <ToolbarItem Icon="ic_settings.png"
+                     Clicked="Profile_Clicked" />
     </ContentPage.ToolbarItems>
-    <xfGloss:ContentPageGloss.BackgroundGradient>
+
+    <!--<xfGloss:ContentPageGloss.BackgroundGradient>
         <xfGloss:Gradient Rotation="170">
             <xfGloss:GradientStep StepColor="#9b7fc8" StepPercentage="0" />
             <xfGloss:GradientStep StepColor="#282929" StepPercentage="0.4" />
             <xfGloss:GradientStep StepColor="#282929" StepPercentage="1" />
         </xfGloss:Gradient>
-    </xfGloss:ContentPageGloss.BackgroundGradient>
+    </xfGloss:ContentPageGloss.BackgroundGradient>-->
     <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ListView ItemsSource="{Binding Users}"
+                      SeparatorColor="DimGray"
+                      Grid.Row="0"
+                      IsEnabled="False"
+                      Margin="0,20"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
 
-        <ListView ItemsSource="{Binding Users}"
-                  IsEnabled="False"
-                  Margin="0,20"
-                  HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <abstractions:CircleImage BorderColor="White" BorderThickness="1" Source="{Binding Avatar}"
-                                                      WidthRequest="75" HeightRequest="75" />
-                            <Label Text="{Binding FullName}" TextColor="White" FontSize="Large" />
-                            <Label Text="{Binding Email}" HorizontalOptions="Center" TextColor="White"
-                                   FontSize="Medium" />
-                        </StackLayout>
-                        <StackLayout >
-                          
-                            <abstractions:CircleImage HeightRequest="80"
-                                                      HorizontalOptions="Center"
-                                                      Source="{Binding Avatar}"
-                                                      VerticalOptions="End"
-                                                      BorderColor="DimGray"
-                                                      BorderThickness="2"
-                                                      WidthRequest="80" />
+                                <abstractions:CircleImage HeightRequest="100"
+                                                          HorizontalOptions="Center"
+                                                          Source="{Binding Avatar}"
+                                                          VerticalOptions="End"
+                                                          BorderColor="DimGray"
+                                                          BorderThickness="2"
+                                                          WidthRequest="100" />
+
+                                <Label FontAttributes="Bold" HorizontalOptions="Center"
+                                       Text="{Binding FullName}" Style="{StaticResource FontAwesomeTextStyle}" FontSize="30"/>
+                                <Label HorizontalOptions="Center" Style="{StaticResource FontAwesomeTextStyle}" FontSize="22" Text="{Binding Email}" />
+                                <BoxView HeightRequest="5" BackgroundColor="Transparent"/>
+                            </StackLayout>
                             
-                            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" Text="{Binding FullName}" />
-                            <Label TextColor="White" HorizontalOptions="Center" Text="{Binding Email}" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        
-        <StackLayout Margin="20,0" Opacity="0.8" BackgroundColor="Transparent">
-            <Button Text="Messages" TextColor="White" Image="ic_message.png" HorizontalOptions="Start"
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Grid Margin="30,20" Grid.Row="1" Grid.Column="0" RowSpacing="20" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <!--<Button Text="Messages" TextColor="White" Image="ic_message.png" HorizontalOptions="Start"
                     BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
             
             <Button Text="People" TextColor="White" Image="ic_groups.png" HorizontalOptions="Start"
@@ -70,9 +122,22 @@
             <Button Clicked="Profile_Clicked" Text="Settings" TextColor="White" BackgroundColor="Transparent"
                     HorizontalOptions="Start" Image="ic_settings.png" />
             <Button Text="Feedback" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Start"
-                    Image="ic_feedback.png" />
-        </StackLayout>
-       
+                    Image="ic_feedback.png" />-->
+
+                <Label Style="{StaticResource FontAwesomeStyle}" Grid.Column="0" Grid.Row="0"
+                       Text="{x:Static constant:FontAwesomeConstant.Messages}" />
+                <Label Style="{StaticResource FontAwesomeTextStyle}" Text="Messages"  Grid.Row="0" Grid.Column="1"/>
+
+                <Label Style="{StaticResource FontAwesomeStyle}" Grid.Column="0" Grid.Row="1"
+                       Text="{x:Static constant:FontAwesomeConstant.Contacts}" />
+                <Label Style="{StaticResource FontAwesomeTextStyle}" Text="Contacts"  Grid.Row="1" Grid.Column="1"/>
+
+                <Label Style="{StaticResource FontAwesomeStyle}" Grid.Column="0" Grid.Row="2"
+                       Text="{x:Static constant:FontAwesomeConstant.Notifications}" />
+                <Label Style="{StaticResource FontAwesomeTextStyle}" Text="Notifications"  Grid.Row="2" Grid.Column="1"/>
+                
+            </Grid>
+        </Grid>
         <!--<Button Image="ic_exit.png"
                 HorizontalOptions="FillAndExpand"
                 BackgroundColor="#e0227c"
@@ -85,6 +150,12 @@
                 Command="{Binding LogoutCommand}"
                 Clicked="LogoutMenuItem_Clicked"
                 VerticalOptions="End" />-->
+
+        <Button Style="{StaticResource FontAwesomeStyleBtn}" 
+                Text="{x:Static constant:FontAwesomeConstant.Signout}" 
+                Command="{Binding LogoutCommand}"
+                Clicked="LogoutMenuItem_Clicked"/>
+        
     </StackLayout>
 
 </ContentPage>

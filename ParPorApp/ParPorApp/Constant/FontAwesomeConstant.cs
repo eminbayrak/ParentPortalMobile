@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ParPorApp.Constant
 {
-    public class FontAwesomeConstant
+    public static class FontAwesomeConstant
     {
         public const string PlayCircleWhite = "\uf01d";
         public const string PauseCircleWhite = "\uf28c";
@@ -15,6 +15,9 @@ namespace ParPorApp.Constant
         public const string Telegram = "\uf2c6";
         public const string Circle = "\uf111";
         public const string List = "\uf03a";
-        public const string Add = "\uf055";
+        public const string Messages = "\uf086";
+        public const string Notifications = "\uf0f3";
+        public const string Contacts = "\uf0c0";
+        public const string Signout = "\uf08b Sign out";
     }
 }
