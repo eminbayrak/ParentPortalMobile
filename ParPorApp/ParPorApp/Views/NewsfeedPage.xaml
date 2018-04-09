@@ -13,6 +13,9 @@
               HasUnevenRows="True"
               ItemSelected="NewsfeedView_OnItemSelected"
               ItemsSource="{Binding Items}"
+              IsPullToRefreshEnabled="True"
+              RefreshCommand="RefreshCommand"
+              IsRefreshing="{Binding IsBusy}"
               SeparatorVisibility = "None" 
               CachingStrategy="RecycleElement">
 

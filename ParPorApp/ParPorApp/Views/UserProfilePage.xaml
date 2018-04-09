@@ -5,7 +5,7 @@
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
-             Title="{Binding Profile}"
+             Title="Profile"
              x:Class="ParPorApp.Views.UserProfilePage">
 
     <ContentPage.BindingContext>
@@ -57,7 +57,7 @@
             </ListView.ItemTemplate>
         </ListView>
         
-        <StackLayout Margin="20,80" Opacity="0.8" BackgroundColor="Transparent">
+        <StackLayout Margin="20,0" Opacity="0.8" BackgroundColor="Transparent">
             <Button Text="Messages" TextColor="White" Image="ic_message.png" HorizontalOptions="Start"
                     BackgroundColor="Transparent" Clicked="gotoGroupPage_clicked" />
             

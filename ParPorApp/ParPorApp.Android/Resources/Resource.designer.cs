@@ -3278,6 +3278,8 @@ namespace ParPorApp.Droid
 			global::PCLCrypto.Resource.String.ApplicationName = global::ParPorApp.Droid.Resource.String.ApplicationName;
 			global::PCLCrypto.Resource.String.Hello = global::ParPorApp.Droid.Resource.String.Hello;
 			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::ParPorApp.Droid.Resource.Drawable.plugin_lc_smallicon;
+			global::ScnViewGestures.Droid.Resource.String.ApplicationName = global::ParPorApp.Droid.Resource.String.ApplicationName;
+			global::ScnViewGestures.Droid.Resource.String.Hello = global::ParPorApp.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::ParPorApp.Droid.Resource.Attribute.actionBarSize;
 			global::XFGloss.Droid.Resource.Animation.abc_fade_in = global::ParPorApp.Droid.Resource.Animation.abc_fade_in;
 			global::XFGloss.Droid.Resource.Animation.abc_fade_out = global::ParPorApp.Droid.Resource.Animation.abc_fade_out;

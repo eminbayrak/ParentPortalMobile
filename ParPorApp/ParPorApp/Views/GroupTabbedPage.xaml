@@ -4,6 +4,6 @@
              xmlns:xamarinForms="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
              x:Class="ParPorApp.Views.GroupTabbedPage">
   <!--Pages can be added as references or inline-->
-    <xamarinForms:BottomBarPage.BarTextColor>Black</xamarinForms:BottomBarPage.BarTextColor>
+    <xamarinForms:BottomBarPage.BarTextColor>WhiteSmoke</xamarinForms:BottomBarPage.BarTextColor>
 
 </xamarinForms:BottomBarPage>

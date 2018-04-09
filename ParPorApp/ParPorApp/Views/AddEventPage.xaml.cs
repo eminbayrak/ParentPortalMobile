@@ -39,8 +39,7 @@ namespace ParPorApp.Views
             await Task.Delay(3000);
 		    await Navigation.PushAsync(new EventsPage());
 		    CrossLocalNotifications.Current.Show("New Event!", "A new content has posted.", 1, UtcNow.AddSeconds(8));
-            
-        }
+		}
 
 	}
 }

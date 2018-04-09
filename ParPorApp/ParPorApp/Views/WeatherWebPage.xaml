@@ -3,8 +3,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParPorApp.Views.WeatherWebPage"
-             Title="Current Weather">
+             Title="Current Weather"
+             NavigationPage.HasNavigationBar="True">
+    
     <ContentPage.Content>
+        
         <StackLayout>
             <WebView Source="https://www.google.com/search?safe=strict&amp;source=hp&amp;ei=Wi66WtCoHqywjwTM-4zQDQ&amp;q=weather&amp;oq=weather&amp;gs_l=psy-ab.3..0i131k1l2j0l2j0i131k1j0l5.1002.2631.0.2826.8.3.0.4.4.0.74.210.3.3.0....0...1c.1.64.psy-ab..1.7.246.0...0.YNUA91qNzlk"
                      VerticalOptions="FillAndExpand"

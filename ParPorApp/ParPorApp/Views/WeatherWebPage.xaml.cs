@@ -15,7 +15,8 @@ namespace ParPorApp.Views
 		public WeatherWebPage ()
 		{
 			InitializeComponent ();
-		}
+		    NavigationPage.SetHasBackButton(this, true);
+        }
 
 	    private async Task NavigateBack_ClickedAsync(object sender, EventArgs e)
 	    {

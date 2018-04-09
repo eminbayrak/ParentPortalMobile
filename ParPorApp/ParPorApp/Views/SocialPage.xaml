@@ -3,11 +3,42 @@
 <xamarinForms:BottomBarPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:xamarinForms="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+            xmlns:views="clr-namespace:ParPorApp.Views;assembly=ParPorApp"
             x:Class="ParPorApp.Views.SocialPage"
-            Icon="hamburger.png">
+                            BarTextColor="WhiteSmoke"
+            NavigationPage.HasBackButton="False">
 
     <!--<ContentPage xamarinForms:BottomBarPageExtensions.TabColor="#cfefa7"/>-->
-    <xamarinForms:BottomBarPage.BarTextColor>WhiteSmoke</xamarinForms:BottomBarPage.BarTextColor>
-    
-    
+    <!--<xamarinForms:BottomBarPage.BarTextColor>WhiteSmoke</xamarinForms:BottomBarPage.BarTextColor>-->
+    <xamarinForms:BottomBarPage.Children >
+            <NavigationPage Title="Home" Icon="ic_home.png" 
+                            xamarinForms:BottomBarPageExtensions.TabColor="#7B1FA2">
+            <x:Arguments>
+                <views:NewsfeedPage/>
+            </x:Arguments>
+            </NavigationPage>
+        <NavigationPage Title="Event" Icon="ic_event_black.png" xamarinForms:BottomBarPageExtensions.TabColor="OrangeRed">
+            
+            <x:Arguments>
+                <views:EventsPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Groups" Icon="ic_groups.png" 
+                        xamarinForms:BottomBarPageExtensions.TabColor="Orange">
+            <x:Arguments>
+                <views:GroupPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Social Feed" Icon="ic_event.png" xamarinForms:BottomBarPageExtensions.TabColor="DodgerBlue">
+            <x:Arguments>
+                <views:FABPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Profile" Icon="ic_face.png" xamarinForms:BottomBarPageExtensions.TabColor="DeepPink">
+            <x:Arguments>
+                <views:UserProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+    </xamarinForms:BottomBarPage.Children>
+
 </xamarinForms:BottomBarPage>

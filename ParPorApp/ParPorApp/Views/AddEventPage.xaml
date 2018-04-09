@@ -13,7 +13,7 @@
         
         <viewGroup:GroupsViewModel x:Key="GroupsViewModel"/>
     </ContentPage.Resources>-->
-
+    <ScrollView>
     <StackLayout VerticalOptions="Center" Padding ="20" Spacing="10">
         
         <Label Text="Event Type" FontAttributes="Bold">Event Type</Label>
@@ -23,12 +23,12 @@
                 <x:String>Training</x:String>
             </Picker.Items>
         </Picker>
-        <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
+        <ContentView HeightRequest="1" BackgroundColor="Transparent"/>
         <Label Text="Description" FontAttributes="Bold"></Label>
         <Entry Text="{Binding Description}" Placeholder="enter a detail"/>
-        <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
+        <ContentView HeightRequest="1" BackgroundColor="Transparent"/>
 
-        <Grid HorizontalOptions="Center">
+            <Grid HorizontalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -53,16 +53,19 @@
         <!--<BoxView WidthRequest="5" BackgroundColor="Transparent"/>
         <Label Text="Group" FontAttributes="Bold" />
         <Picker Title="Select a group" BindingContext="{StaticResource GroupsViewModel}" />-->
-           
-        <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
-        <Label Text="Location" FontAttributes="Bold" />
+
+            <ContentView HeightRequest="1" BackgroundColor="Transparent"/>
+            <Label Text="Location" FontAttributes="Bold" />
         <Entry Text="{Binding LocationId}" Placeholder="input the location address"/>
 
-        <BoxView WidthRequest="5" BackgroundColor="Transparent"/>
+        <ContentView HeightRequest="1" BackgroundColor="Transparent"/>
         <Button Command="{Binding AddEventCommand}"
                 Clicked="ReturnEventPage_Clicked"
                 Style="{StaticResource MessageButton}"
+                VerticalOptions="End"
                 Text="Add Event"/>
-    
-    </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+     
 </ContentPage>

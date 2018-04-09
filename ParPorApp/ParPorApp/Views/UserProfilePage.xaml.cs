@@ -18,8 +18,7 @@ namespace ParPorApp.Views
 		{
 			InitializeComponent ();
 			BindingContext = usersViewModel = new UserViewModel();
-		    NavigationPage.SetHasNavigationBar(this, false);
-        }
+		}
 
 		protected override void OnAppearing()
 		{
@@ -36,7 +35,7 @@ namespace ParPorApp.Views
 	    private async void LogoutMenuItem_Clicked(object sender, EventArgs e)
 	    {
 
-	        await Navigation.PushAsync(new LoginPage());
+	        await Navigation.PushModalAsync(new LoginPage());
 	    }
 	    private async Task Profile_Clicked(object sender, EventArgs e)
 	    {

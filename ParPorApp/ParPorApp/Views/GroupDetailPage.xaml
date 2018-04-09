@@ -4,8 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:xfGloss="clr-namespace:XFGloss;assembly=XFGloss"
-             x:Class="ParPorApp.Views.GroupDetailPage"
-             Title="Team Detail">
+             x:Class="ParPorApp.Views.GroupDetailPage">
 
 
     <ListView x:Name="groupdetailView"

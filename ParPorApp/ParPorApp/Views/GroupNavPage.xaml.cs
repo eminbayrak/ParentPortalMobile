@@ -15,8 +15,8 @@ namespace ParPorApp.Views
         public GroupNavPage ()
         {
             InitializeComponent();
-            Children.Add(new GroupDetailPage() { Icon = "ic_contact.png" });
-            Children.Add(new GroupMembersPage() { Icon = "ic_groups.png" });
+            Children.Add(new GroupDetailPage() { Title="Detail"});
+            Children.Add(new GroupMembersPage() { Title = "Members" });
         }
     }
 }
