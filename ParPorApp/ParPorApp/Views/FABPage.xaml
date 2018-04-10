@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:constant="clr-namespace:ParPorApp.Constant;assembly=ParPorApp"
              x:Class="ParPorApp.Views.FABPage"
-             Title="Social Feeds">
+             Title="Social">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -42,18 +42,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Image Source="image_1.jpg" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
-                <Image Source="image_2.jpg" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
-                <Image Source="image_3.jpg" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
-            </StackLayout>
             <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Image Source="image_4.jpg" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
-                <Image Source="image_5.jpg" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
+                <Label Style="{StaticResource FontAwesomeStyleBtn}" FontSize="30"
+                       Text="{x:Static constant:FontAwesomeConstant.Clock}"/>
+                
             </StackLayout>
-            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Image Source="image_6.jpg" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
-            </StackLayout>
+            
         </Grid>
 
         <Grid VerticalOptions="End" HorizontalOptions="FillAndExpand">

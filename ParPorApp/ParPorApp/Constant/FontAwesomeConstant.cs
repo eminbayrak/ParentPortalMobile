@@ -18,6 +18,12 @@ namespace ParPorApp.Constant
         public const string Messages = "\uf086";
         public const string Notifications = "\uf0f3";
         public const string Contacts = "\uf0c0";
-        public const string Signout = "\uf08b Sign out";
+        public const string Signout = "\uf08b";
+        public const string Account = "\uf013 Account settings";
+        public const string Edit = "\uf040";
+        public const string Phone = "\uf095";
+        public const string Clock = "\uf017 Coming soon...";
+        public const string Help = "\uf059 Feedback";
+        public const string Email = "\uf0e0"; 
     }
 }

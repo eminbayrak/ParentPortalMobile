@@ -18,7 +18,8 @@ namespace ParPorApp.Views
 		{
 			InitializeComponent ();
 			BindingContext = usersViewModel = new UserViewModel();
-		}
+		    NavigationPage.SetHasNavigationBar(this, false);
+        }
 
 		protected override void OnAppearing()
 		{

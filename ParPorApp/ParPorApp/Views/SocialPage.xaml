@@ -12,29 +12,29 @@
     <!--<xamarinForms:BottomBarPage.BarTextColor>WhiteSmoke</xamarinForms:BottomBarPage.BarTextColor>-->
     <xamarinForms:BottomBarPage.Children >
             <NavigationPage Title="Home" Icon="ic_home.png" 
-                            xamarinForms:BottomBarPageExtensions.TabColor="#7B1FA2">
+                            xamarinForms:BottomBarPageExtensions.TabColor="MediumSlateBlue">
             <x:Arguments>
                 <views:NewsfeedPage/>
             </x:Arguments>
             </NavigationPage>
-        <NavigationPage Title="Events" Icon="ic_event_black.png" xamarinForms:BottomBarPageExtensions.TabColor="OrangeRed">
+        <NavigationPage Title="Events" Icon="ic_event_black.png" xamarinForms:BottomBarPageExtensions.TabColor="DarkOrchid">
             
             <x:Arguments>
                 <views:EventsPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Groups" Icon="ic_groups.png" 
-                        xamarinForms:BottomBarPageExtensions.TabColor="Orange">
+                        xamarinForms:BottomBarPageExtensions.TabColor="ForestGreen">
             <x:Arguments>
                 <views:GroupPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Social Feeds" Icon="ic_event.png" xamarinForms:BottomBarPageExtensions.TabColor="DodgerBlue">
+        <NavigationPage Title="Chat" Icon="ic_message.png" xamarinForms:BottomBarPageExtensions.TabColor="Coral">
             <x:Arguments>
                 <views:FABPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Profile" Icon="ic_face.png" xamarinForms:BottomBarPageExtensions.TabColor="DeepPink">
+        <NavigationPage Title="Profile" Icon="ic_face.png" xamarinForms:BottomBarPageExtensions.TabColor="CornflowerBlue">
             <x:Arguments>
                 <views:UserProfilePage />
             </x:Arguments>
