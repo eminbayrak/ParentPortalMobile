@@ -19,7 +19,8 @@ namespace ParPorApp.Views
 		public AddEventPage ()
 		{
 			InitializeComponent ();
-		}
+		    
+        }
 
 	    private void DatePicker_StartDateSelected(object sender, DateChangedEventArgs e)
 	    {
