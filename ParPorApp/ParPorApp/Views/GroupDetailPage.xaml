@@ -18,35 +18,26 @@
 
             <DataTemplate>
                 <ViewCell>
-                    <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="AUTO" />
                             <RowDefinition Height="AUTO" />
-                            <RowDefinition Height="AUTO" />
                         </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" Margin="0,30,0,0">
+                            <abstractions:CircleImage HorizontalOptions="Center"
+                                                      Source="princeton.png"                                                  
+                                                      VerticalOptions="End"
+                                                      WidthRequest="50" />
 
-
-                        <abstractions:CircleImage Grid.Row="0"
-                                                  HeightRequest="120"
-                                                  HorizontalOptions="Center"
-                                                  Source="princeton.png"
-
-                                                  TranslationY="40"
-                                                  VerticalOptions="End"
-
-                                                  WidthRequest="120" />
-
-
-                        <StackLayout Grid.Row="1" Padding="0,50,0,00" HorizontalOptions="Center">
-                            <Label Margin="0,-1" Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}" />
+                            <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding Name}" />
                             <Label Style="{StaticResource ProfileTagLabel}" Text="{Binding Description}" />
                             <BoxView BackgroundColor="Transparent" HeightRequest="20"/>
-                            <Image Source="socialmedia.png" HeightRequest="40" WidthRequest="220" />
+                            <Image Source="socialmedia.png" HeightRequest="30" WidthRequest="220" />
                             <BoxView BackgroundColor="Transparent" HeightRequest="20"/>
-                            <Label Text="100 Viking Way, Cincinnati, OH 45246" FontSize="Medium"/>
-                            <Label Text="(513) 864-1500"/>
-                            <Button Text="www.princetonschools.net" BackgroundColor="Transparent" TextColor="Blue" Clicked="WebsiteButton_OnClicked"
-                                    FontSize="Large" />
+                            <Label Text="100 Viking Way, Cincinnati, OH 45246" HorizontalOptions="Center"/>
+                            <Label Text="(513) 864-1500" HorizontalOptions="Center"/>
+                            <Button Text="Website" BackgroundColor="Transparent" TextColor="Blue" Clicked="WebsiteButton_OnClicked"
+                                    />
                         </StackLayout>
                         
 

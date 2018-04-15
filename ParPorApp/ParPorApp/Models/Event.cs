@@ -11,7 +11,7 @@ namespace ParPorApp.Models
 		public string Description { get; set; }
 
 	    [JsonProperty("StartDateTime")]
-	    public String StartDateTime { get; set; }
+	    public string StartDateTime { get; set; }
 
         [JsonProperty("GroupId")]
 		public string GroupId { get; set; }
@@ -23,7 +23,7 @@ namespace ParPorApp.Models
 		public string LocationId { get; set; }
 
 	    [JsonProperty("EndDateTime")]
-	    public String EndDateTime { get; set; }
+	    public string EndDateTime { get; set; }
 
         [JsonProperty("Name")]
 		public string Name { get; set; }
@@ -35,6 +35,6 @@ namespace ParPorApp.Models
         public string ImageUrl { get; set; }
 
         [JsonProperty("PostDate")]
-        public string PostedOnDateTime { get; set; }
+        public string PostDate { get; set; }
     }
 }

@@ -39,15 +39,15 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Text="Start Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"></Label>
-            <Label Text="Finish Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"></Label>
-            <TimePicker x:Name="StartTime" Format="hh:mm tt" Grid.Row="1" Grid.Column="0" />
-            <TimePicker x:Name="EndTime" Format="hh:mm tt" Grid.Row="1" Grid.Column="1" />
-            <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_StartDateSelected" Grid.Column="0" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
-            <DatePicker Format="MMM/dd/yyyy" DateSelected="DatePicker_FinishDateSelected" Grid.Column="1" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
+            <Label Text="Start Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" /> 
+            <Label Text="Finish Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" />
+            <TimePicker x:Name="StartTime" Grid.Row="1" Grid.Column="0" />
+            <TimePicker x:Name="EndTime"  Grid.Row="1" Grid.Column="1" />
+            <DatePicker DateSelected="DatePicker_StartDateSelected" Grid.Column="0" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
+            <DatePicker DateSelected="DatePicker_FinishDateSelected" Grid.Column="1" Grid.Row="2" MinimumDate="{x:Static system:DateTime.UtcNow}" />
 
-            <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay}" />
-            <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime, Mode=TwoWay}" />
+                <Label x:Name="StartDate" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"   Text="{Binding StartDateTime, Mode=TwoWay}" />
+                <Label x:Name="FinishDate" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"  Text="{Binding EndDateTime, Mode=TwoWay}" />
         </Grid>
 
         <!--<BoxView WidthRequest="5" BackgroundColor="Transparent"/>

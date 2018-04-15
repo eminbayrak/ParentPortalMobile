@@ -25,16 +25,16 @@ namespace ParPorApp.Droid
 			base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-
+            IconEntryRenderer.Init();
+            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.ic_logo;
+            CachedImageRenderer.Init(enableFastRenderer: true);
+            ViewGesturesRenderer.Init();
             //Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             Forms.Init(this, bundle);
             CurrentPlatform.Init();
             LoadApplication(new App());
 
-            IconEntryRenderer.Init();
-            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.ic_logo;
-            CachedImageRenderer.Init(enableFastRenderer: true);
-            ViewGesturesRenderer.Init();
+            
 
             //Window.AddFlags(WindowManagerFlags.LayoutNoLimits);
             //Window.AddFlags(WindowManagerFlags.LayoutInScreen);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -23,15 +24,24 @@ namespace ParPorApp.Views
 
 	    private void DatePicker_StartDateSelected(object sender, DateChangedEventArgs e)
 	    {
-	        StartDate.Text = e.NewDate.Month.ToString() + "/" + e.NewDate.Day.ToString() + "/" + e.NewDate.Year.ToString() + " " + StartTime.Time.ToString();
-        }
+	        
+	        //string sourceDateText = e.NewDate.Month.ToString(CultureInfo.InvariantCulture) + "/" + e.NewDate.Day.ToString(CultureInfo.InvariantCulture) + "/" + e.NewDate.Year.ToString(CultureInfo.InvariantCulture) + " " + StartTime.Time;
+            var date = StartDate.Text = e.NewDate.Month.ToString() + "/" + e.NewDate.Day.ToString() + "/" + e.NewDate.Year.ToString();
+            TimeSpan pickertime = StartTime.Time;
+	        var dt = Convert.ToDateTime(pickertime.ToString());
+	        var time = dt.ToString("hh:mm tt");
+	        var sourceDataText = date + " " + time;
+	        StartDate.Text = sourceDataText;
+	    }
 
 	    private void DatePicker_FinishDateSelected(object sender, DateChangedEventArgs e)
 	    {
-	        string dateTime = e.NewDate.Month.ToString() + "/" + e.NewDate.Day.ToString() + "/" + e.NewDate.Year.ToString() + " " + EndTime.Time.ToString();
-	        FinishDate.Text = dateTime;
-
-
+	        var date = StartDate.Text = e.NewDate.Month.ToString() + "/" + e.NewDate.Day.ToString() + "/" + e.NewDate.Year.ToString();
+	        TimeSpan pickertime = EndTime.Time;
+	        var dt = Convert.ToDateTime(pickertime.ToString());
+	        var time = dt.ToString("hh:mm tt");
+	        var sourceDataText = date + " " + time;
+	        FinishDate.Text = sourceDataText;
         }
 
         private async Task ReturnEventPage_Clicked(object sender, EventArgs e)

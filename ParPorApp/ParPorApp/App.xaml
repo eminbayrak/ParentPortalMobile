@@ -2,13 +2,13 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ParPorApp.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">Black</Color>
-            <Color x:Key="PrimaryDark">#5e4786</Color>
-            <Color x:Key="Accent">#8d73b6</Color>
+            <!--<Color x:Key="Primary">Black</Color>
+            <Color x:Key="PrimaryDark">#4d4d4d</Color>
+            <Color x:Key="Accent">#999999</Color>
             <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
             <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
             <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="LightTextColor">#999999</Color>-->
 
             <!--<Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Accent}" />
@@ -21,7 +21,7 @@
             <!--  colors  -->
             <Color x:Key="HeaderTextColor">Black</Color>
             <Color x:Key="BodyTextColor">Black</Color>
-            <Color x:Key="ButtonBackgroundColor">#58edf4</Color>
+            <Color x:Key="ButtonBackgroundColor">#0099FF</Color>
             <Color x:Key="BackgroundColor">White</Color>
 
             <!--  font families  -->
@@ -41,12 +41,12 @@
             </OnPlatform>
 
             <!--  font sizes  -->
-            <x:Double x:Key="TitleFontSize">30</x:Double>
-            <x:Double x:Key="BodyFontSize">18</x:Double>
-            <x:Double x:Key="TagTextFontSize">18</x:Double>
-            <x:Double x:Key="StatsNumberFontSize">20</x:Double>
-            <x:Double x:Key="StatsCaptionFontSize">18</x:Double>
-            <x:Double x:Key="ButtonFontSize">14</x:Double>
+            <x:Double x:Key="TitleFontSize">20</x:Double>
+            <x:Double x:Key="BodyFontSize">14</x:Double>
+            <x:Double x:Key="TagTextFontSize">12</x:Double>
+            <x:Double x:Key="StatsNumberFontSize">16</x:Double>
+            <x:Double x:Key="StatsCaptionFontSize">12</x:Double>
+            <x:Double x:Key="ButtonFontSize">20</x:Double>
 
             <!--  styles  -->
             <Style x:Key="ProfileNameLabel" TargetType="Label">
@@ -98,16 +98,16 @@
 
             <Style x:Key="MessageButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="BorderRadius" Value="5" />
                 <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
                 <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
             </Style>
-            <Style TargetType="NavigationPage">
+            <!--<Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Accent}" />
-                <!--<Setter Property="BarTextColor" Value="Black" />-->
-            </Style>
+                --><!--<Setter Property="BarTextColor" Value="Black" />--><!--
+            </Style>-->
 
         </ResourceDictionary>
     </Application.Resources>

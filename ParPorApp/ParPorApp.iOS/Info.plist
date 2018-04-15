@@ -20,10 +20,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome.ttf</string>
+	</array>
 	<key>MinimumOSVersion</key>
 	<string>11.2</string>
 	<key>CFBundleDisplayName</key>
-	<string>ParPorApp</string>
+	<string>Sportive Parent</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.yourcompany.ParPorApp</string>
 	<key>CFBundleVersion</key>
@@ -50,19 +54,15 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>ParPorApp</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Fonts/FontAwesome.otf</string>
-	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>Transparent black</string>
 </dict>
 </plist>

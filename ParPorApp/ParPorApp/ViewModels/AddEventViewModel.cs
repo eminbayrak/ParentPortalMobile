@@ -21,7 +21,7 @@ namespace ParPorApp.ViewModels
 	    public string LocationId { get; set; }
 	    public string StartDateTime { get; set; }
 	    public string Name { get; set; }
-        
+
         public ICommand AddEventCommand
 	    {
 		    get
@@ -31,8 +31,9 @@ namespace ParPorApp.ViewModels
 					
 						var events = new Event()
 						{
+
 							Name = Name,
-							Description = Description,
+                            Description = Description,
 							StartDateTime = StartDateTime,
 							EndDateTime = EndDateTime,
                             GroupId = GroupId

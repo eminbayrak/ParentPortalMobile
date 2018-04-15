@@ -10,13 +10,13 @@
     <!--<ContentPage.BindingContext>
         <viewModels:NewsfeedViewModel />
     </ContentPage.BindingContext>-->
-    <xfGloss:ContentPageGloss.BackgroundGradient>
+    <!--<xfGloss:ContentPageGloss.BackgroundGradient>
         <xfGloss:Gradient Rotation="150">
             <xfGloss:GradientStep StepColor="White" StepPercentage="0" />
             <xfGloss:GradientStep StepColor="White" StepPercentage=".5" />
             <xfGloss:GradientStep StepColor="#ccd9ff" StepPercentage="1" />
         </xfGloss:Gradient>
-    </xfGloss:ContentPageGloss.BackgroundGradient>
+    </xfGloss:ContentPageGloss.BackgroundGradient>-->
 
     <ContentPage.Content>
         <Grid ColumnSpacing="0" RowSpacing="0">
@@ -34,20 +34,18 @@
 
             <!--  profile image  -->
             <abstractions:CircleImage Grid.Row="0"
-                                      HeightRequest="80"
+                                      HeightRequest="40"
                                       HorizontalOptions="Center"
                                       Source="{Binding ImageUrl}"
                                       TranslationY="40"
                                       VerticalOptions="End"
-                                      BorderColor="White"
-                                      BorderThickness="2"
-                                      WidthRequest="80" />
+                                      WidthRequest="50" />
 
             <!--  Game Info Section  -->
-            <StackLayout Grid.Row="1" Padding="0,50,0,00" HorizontalOptions="Center">
-                <Label Margin="0,-1" Style="{StaticResource ProfileTagLabel}" Text="{Binding Name}" />
-                <Label Style="{StaticResource ProfileNameLabel}" Text="{Binding EventDate}" />
-                <Label Margin="20,0" Grid.Row="3" Style="{StaticResource ProfileTagLabel}" Text="{Binding Location}" />
+            <StackLayout Grid.Row="1" Padding="0,40,0,00" Margin="20,0" HorizontalOptions="Center">
+                <Label Text="{Binding Name}" />
+                <Label  Text="{Binding EventDate}" FontAttributes="Bold"/>
+                <Label  Grid.Row="3" Text="{Binding Location}" />
 
             </StackLayout>
 
@@ -61,36 +59,36 @@
 
                 <StackLayout>
                     <Image Source="{Binding HomeTeamLogo}"
-                           WidthRequest="70" HeightRequest="70" />
+                           WidthRequest="30" HeightRequest="30" />
                     <Label Style="{StaticResource StatsCaptionLabel}" Text="{Binding HomeTeamName}" />
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
-                    <Label Style="{StaticResource StatsNumberLabel}" Grid.RowSpan="3" Margin="0,30"
-                           VerticalOptions="Center" FontSize="40" Text="{Binding VS}" />
+                    <Label Style="{StaticResource StatsNumberLabel}" Grid.RowSpan="2" Margin="0,20"
+                           VerticalOptions="Center" FontSize="20" Text="{Binding VS}" />
 
                 </StackLayout>
 
                 <StackLayout Grid.Column="2">
                     <Image Source="{Binding AwayTeamLogo}"
-                           WidthRequest="70" HeightRequest="70" />
+                           WidthRequest="30" HeightRequest="30" />
                     <Label Style="{StaticResource StatsCaptionLabel}" Text="{Binding AwayTeamName}" />
                 </StackLayout>
             </Grid>
 
 
-            <Label Margin="30,20" Grid.Row="3" FontSize="16" FontAttributes="Italic" Text="{Binding Note}" />
+            <Label Margin="30,20" Grid.Row="3" FontAttributes="Italic" Text="{Binding Note}" />
             <!--  send message button  -->
             <Grid Grid.Row="4" Margin="0,10" Padding="30" ColumnSpacing="0" RowSpacing="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <StackLayout>
                     <Button Grid.Row="4" HorizontalOptions="Center" BackgroundColor="Transparent" Image="ic_share.png"
-                            Text="Share" TextColor="Black" Clicked="Share_onClicked" />
+                            Text="Share" Clicked="Share_onClicked" />
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
@@ -98,7 +96,6 @@
                             Clicked="TakeMeThere_Clicked"
                             BackgroundColor="Transparent"
                             Image="ic_navigation.png"
-                            TextColor="Black"
                             Text="Navigate" />
 
                     <!--<Button HorizontalOptions="Center"
@@ -111,7 +108,7 @@
                 </StackLayout>
 
                 <StackLayout Grid.Column="2">
-                    <Button HorizontalOptions="Center" Text="Weather" BackgroundColor="Transparent" TextColor="Black"
+                    <Button HorizontalOptions="Center" Text="Weather" BackgroundColor="Transparent"
                             Image="ic_weather.png" Clicked="Weather_OnClicked" />
                 </StackLayout>
             </Grid>

@@ -16,7 +16,6 @@
             <Style x:Key="FontAwesomeStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
                 <Setter Property="FontSize" Value="35" />
-                <Setter Property="TextColor" Value="White" />
                 <Setter Property="Opacity" Value="0.75" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -26,7 +25,6 @@
             <Style x:Key="FontAwesomeStyleBtn" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
                 <Setter Property="FontSize" Value="75" />
-                <Setter Property="TextColor" Value="{StaticResource PrimaryDark}" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
@@ -52,7 +50,6 @@
 
         <Grid VerticalOptions="End" HorizontalOptions="FillAndExpand">
             <StackLayout x:Name="BlueBarLayout"  
-                         BackgroundColor="{StaticResource PrimaryDark}" 
                          TranslationY="60"
                          WidthRequest="60"
                          HeightRequest="60" 

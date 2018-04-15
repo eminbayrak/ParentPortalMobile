@@ -21,13 +21,12 @@
                 <On Platform="iOS" Value="FontAwesome" />
             </OnPlatform>
             <Style x:Key="FontAwesomeTextStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="Opacity" Value="0.90" />
             </Style>
             <Style x:Key="FontAwesomeStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
-                <Setter Property="FontSize" Value="20" />
+                
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="Opacity" Value="1" />
                 <Setter Property="VerticalOptions" Value="Center" />
@@ -37,7 +36,7 @@
             </Style>
             <Style x:Key="FontAwesomeIconStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
-                <Setter Property="FontSize" Value="25" />
+               
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -46,7 +45,7 @@
             </Style>
             <Style x:Key="FontAwesomeStyleBtn" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
-                <Setter Property="FontSize" Value="25" />
+                
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="HorizontalOptions" Value="End" />
@@ -56,7 +55,7 @@
             </Style>
             <Style x:Key="FontAwesomeStyleBtnBot" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource AwesomeFont}" />
-                <Setter Property="FontSize" Value="20" />
+                
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalOptions" Value="End" />
                 <Setter Property="HorizontalOptions" Value="Start" />
@@ -95,10 +94,10 @@
                                                               BorderColor="White"
                                                               BorderThickness="2"
                                                               WidthRequest="100" />
-                                    <Label FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"
+                                    <Label FontAttributes="Bold" HorizontalOptions="Center"
                                            Text="{Binding FullName}" Style="{StaticResource FontAwesomeTextStyle}" />
                                     <Label HorizontalOptions="Center" Style="{StaticResource FontAwesomeTextStyle}"
-                                           FontSize="18" Text="{Binding Email}" />
+                                           Text="{Binding Email}" />
                                     <BoxView HeightRequest="5" BackgroundColor="Transparent" />
                                 </StackLayout>
 
@@ -135,6 +134,7 @@
 
             <Button Grid.Row="0" Style="{StaticResource FontAwesomeStyleBtn}"
                     Text="{x:Static constant:FontAwesomeConstant.Signout}"
+                    FontSize="20"
                     Command="{Binding LogoutCommand}"
                     Clicked="LogoutMenuItem_Clicked" />
             <StackLayout Grid.Row="4" VerticalOptions="End" Margin="20,0,0,00" HorizontalOptions="Start">

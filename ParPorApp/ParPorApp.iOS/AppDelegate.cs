@@ -50,12 +50,13 @@ namespace ParPorApp.iOS
             UITabBar.Appearance.BarTintColor = UIColor.LightTextColor;
             UITabBar.Appearance.TintColor = UIColor.White;
             UIProgressView.Appearance.TintColor = UIColor.FromRGB(188, 75, 75);
-            LoadApplication(new App());
+            CachedImageRenderer.Init();
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(255, 20, 153);
             UINavigationBar.Appearance.TintColor = UIColor.White;
-            return base.FinishedLaunching(app, options);
-            CachedImageRenderer.Init();
             ViewGesturesRenderer.Init();
+            LoadApplication(new App());
+            return base.FinishedLaunching(app, options);
+            
         }
     }
 }
